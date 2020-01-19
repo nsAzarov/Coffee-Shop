@@ -1,0 +1,33 @@
+{
+  "name": "Coffee-Shop",
+  "version": "1.0.0",
+  "description": "Coffee-Shop",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nsAzarov/Coffee-Shop.git"
+  },
+  "author": "nsAzarov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nsAzarov/Coffee-Shop/issues"
+  },
+  "homepage": "https://github.com/nsAzarov/Coffee-Shop#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.7.12",
+    "nodemon": "^1.19.4"
+  }
+}
