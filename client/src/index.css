@@ -1,13 +1,32 @@
 * {
   margin: 0;
   padding: 0;
-  letter-spacing: 2px;
   font-family: 'Karla', sans-serif;
 }
 
 button {
   border: none;
   cursor: pointer;
+}
+
+a:active, a:visited{color: inherit} 
+
+.small-text {
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 2px;
+}
+
+.small-text-bold {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.middle-text {
+  font-size: 14px;
+  line-height: 22px;
 }
 /*body {
   margin: 0;

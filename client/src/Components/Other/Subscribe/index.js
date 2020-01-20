@@ -9,10 +9,6 @@ const SubscribeForm = styled.div`
         padding: 0px 24px;
         background-color: transparent;
         color: #fff;
-        font-size: 12px;
-        line-height: 18px;
-        font-weight: 700;
-        letter-spacing: 2px;
         text-transform: uppercase;
         margin-right: 10px;
         border: 1px solid #2f303e;
@@ -29,9 +25,6 @@ const SubscribeForm = styled.div`
         padding: 18px 24px;
         color: #1d1f2e;
         background-color: #fff;
-        font-size: 12px;
-        line-height: 18px;
-        font-weight: 700;
         text-align: center;
         transition: .2s;
         &:hover {
@@ -57,15 +50,12 @@ const FirstHeadline = styled.div`
     align-items: center;
     color: white;
     opacity: 0.6;
-    font-size: 12px;
-    line-height: 18px;
-    font-weight: 700;
     text-transform: uppercase;
     .deco-line {
         width: 30px;
         height: 1px;
         margin: 0px 15px;
-        background-color: rgba(210, 210, 213, 0.1);
+        background-color: #d2d2d2;
     }
 `;
 
@@ -96,15 +86,15 @@ export default function index() {
         <SubscribeSection>
             <SubscribeWrap>
                 <Form>
-                    <FirstHeadline>
+                    <FirstHeadline className="small-text-bold">
                         <div className="deco-line"></div>
                         SIGN UP AND GET FREE COFFEE BAGS
                         <div className="deco-line"></div>
                     </FirstHeadline>
                     <SecondHeadline>Coffee Updates</SecondHeadline>
                     <SubscribeForm>
-                        <input type="text" placeholder="customer@coffeestyle.io"/>
-                        <button>SUBSCRIBE</button>
+                        <input type="text" className="small-text-bold" placeholder="customer@coffeestyle.io"/>
+                        <button className="small-text-bold">SUBSCRIBE</button>
                     </SubscribeForm>
                 </Form>
             </SubscribeWrap>

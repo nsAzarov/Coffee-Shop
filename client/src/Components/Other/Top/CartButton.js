@@ -6,9 +6,6 @@ const Cart = styled.div`
     display: flex;
     align-items: center;
     cursor: pointer;
-    line-height: 18px;
-    font-weight: 700;
-    font-size: 12px;
     margin-left: 20px;
     transition: .2s;
     opacity: .6;
@@ -42,7 +39,7 @@ const Quantity = styled.div`
 
 export default function CartButton() {
     return (
-        <Cart>
+        <Cart className="small-text-bold">
             <CartIcon />
             CART
             <Quantity>0</Quantity>

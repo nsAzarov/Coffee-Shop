@@ -20,12 +20,8 @@ const MenuItemWrap = styled.div`
 `;
 
 const MenuItem = styled.a`
-    font-size: 12px;
     color: #1d1f2e;
     margin: 2px 0px;
-    line-height: 18px;
-    font-weight: 700;
-    letter-spacing: 2px;
     text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
@@ -39,31 +35,31 @@ export default function NavMenu() {
     return (
         <Nav>
             <MenuItemWrap>
-                <MenuItem>
+                <MenuItem className="small-text-bold">
                 HOME
                 </MenuItem>
                 <MenuItemDecoLine />
             </MenuItemWrap>
             <MenuItemWrap>
-                <MenuItem>
+                <MenuItem className="small-text-bold">
                 OUR PRODUCTS
                 </MenuItem>
                 <MenuItemDecoLine />
             </MenuItemWrap>
             <MenuItemWrap>
-                <MenuItem>
+                <MenuItem className="small-text-bold">
                 BLOG
                 </MenuItem>
                 <MenuItemDecoLine />
             </MenuItemWrap>
             <MenuItemWrap>
-                <MenuItem>
+                <MenuItem className="small-text-bold">
                 ABOUT
                 </MenuItem>
                 <MenuItemDecoLine />
             </MenuItemWrap>
             <MenuItemWrap>
-                <MenuItem>
+                <MenuItem className="small-text-bold">
                 CONTACT
                 </MenuItem>
                 <MenuItemDecoLine />
