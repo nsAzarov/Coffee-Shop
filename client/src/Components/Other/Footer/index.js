@@ -8,8 +8,6 @@ const GridElem = styled.div`
         letter-spacing: 0px;
         font-weight: bold;
     }
-    .col-header {
-    }
     a {
         text-decoration: none;
         display: block;
@@ -20,14 +18,12 @@ const GridElem = styled.div`
         }
     }
     .copyright {
-        position: absolute;
-        bottom: 35px;
+        margin-top: 50px;
         cursor: pointer;
     }
     h2 {
         color: grey;
-        position: absolute;
-        bottom: 100px;
+        margin-top: 25px;
     }
 `;
 
@@ -54,13 +50,13 @@ export default function index() {
                     <div className="logo">CoffeeShop</div>
                 </GridElem>
                 <GridElem>
-                    <div className="col-header small-text-bold">MENU</div>
+                    <div className="small-text-bold">MENU</div>
                 </GridElem>
                 <GridElem>
-                    <div className="col-header small-text-bold">FOLLOW US</div>
+                    <div className="small-text-bold">FOLLOW US</div>
                 </GridElem>
                 <GridElem>
-                    <div className="col-header small-text-bold">CONTACT US</div>
+                    <div className="small-text-bold">CONTACT US</div>
                 </GridElem>
                 <GridElem className='middle-text'>
                     <p>Delivering the best coffee life since 1996.<br />From coffee geeks to the real ones.</p>

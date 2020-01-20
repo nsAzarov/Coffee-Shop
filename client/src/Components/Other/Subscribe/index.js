@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ButtonWhite from '../ButtonWhite';
 
 const SubscribeForm = styled.div`
     input {
@@ -94,7 +95,7 @@ export default function index() {
                     <SecondHeadline>Coffee Updates</SecondHeadline>
                     <SubscribeForm>
                         <input type="text" className="small-text-bold" placeholder="customer@coffeestyle.io"/>
-                        <button className="small-text-bold">SUBSCRIBE</button>
+                        <ButtonWhite className='middle-text' text='SUBSCRIBE'/>
                     </SubscribeForm>
                 </Form>
             </SubscribeWrap>
