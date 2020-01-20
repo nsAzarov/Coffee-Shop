@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import NavMenu from './NavMenu';
 import CartButton from './CartButton';
 
-const TopSectionContainer = styled.div`
+const TopSection = styled.div`
     display: flex;
     justify-content: center;
     width: 100%;
@@ -26,15 +26,15 @@ const MenuIcon = styled.div`
     display: none;
 `;
 
-export default function TopSection() {
+export default function index() {
     return (
-        <TopSectionContainer>
+        <TopSection>
             <Wrap>
                 <Logo>CoffeeShop</Logo>
                 <NavMenu />
                 <CartButton />
                 <MenuIcon></MenuIcon>
             </Wrap>
-        </TopSectionContainer>
+        </TopSection>
     )
 }
