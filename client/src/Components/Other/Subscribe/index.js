@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ButtonWhite from '../ButtonWhite';
+import {Headline} from '../Headline';
 
 const SubscribeForm = styled.div`
     input {
@@ -45,21 +46,6 @@ const SecondHeadline = styled.div`
     color: #f5f5f5;
 `;
 
-const FirstHeadline = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    opacity: 0.6;
-    text-transform: uppercase;
-    .deco-line {
-        width: 30px;
-        height: 1px;
-        margin: 0px 15px;
-        background-color: #d2d2d2;
-    }
-`;
-
 const Form = styled.div`
     display: flex;
     flex-direction: column;
@@ -87,11 +73,11 @@ export default function index() {
         <SubscribeSection>
             <SubscribeWrap>
                 <Form>
-                    <FirstHeadline className="small-text-bold">
+                    <Headline className="small-text-bold">
                         <div className="deco-line"></div>
                         SIGN UP AND GET FREE COFFEE BAGS
                         <div className="deco-line"></div>
-                    </FirstHeadline>
+                    </Headline>
                     <SecondHeadline>Coffee Updates</SecondHeadline>
                     <SubscribeForm>
                         <input type="text" className="small-text-bold" placeholder="customer@coffeestyle.io"/>
