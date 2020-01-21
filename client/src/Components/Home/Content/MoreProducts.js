@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {Headline} from '../../Other/Headline';
+import ButtonWhite from '../../Other/ButtonWhite';
 
 const Price = styled.div`
     display: flex;
@@ -34,6 +35,41 @@ const ImageArea = styled.div`
         object-fit: cover;
         height: 380px;
         width: 300px;
+    }
+    position: relative;
+    .sale {
+        position: absolute;
+        z-index: 10;
+        top: 10px;
+        right: 10px;
+        font-size: 16px;
+        padding: 12px 16px;
+        letter-spacing: normal;
+        color: #a25f4b;
+        font-weight: 700;
+    }
+    .overlay {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: background-color .2s linear, opacity .4s;
+        .btn {
+            transition: .4s;
+            margin: 1% 4%;
+            width: 92%;
+        }
+        &:hover {
+            .btn {
+                margin: 4% 4%;
+            }
+            opacity: 1;
+            background-color: rgb(50%,50%,50%, .2);
+        }
     }
 `;
 
@@ -68,6 +104,10 @@ export default function MoreProducts() {
                 <ProductSmall>
                     <ImageArea>
                         <img src={require(`../../../images/img1.jpg`)} alt=""/>
+                        <ButtonWhite className='sale' text='On Sale'/>
+                        <div className="overlay">
+                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                        </div>
                     </ImageArea>
                     <Title>
                     Red Love Cup
@@ -80,6 +120,10 @@ export default function MoreProducts() {
                 <ProductSmall>
                     <ImageArea>
                         <img src={require(`../../../images/img2.jpg`)} alt=""/>
+                        <ButtonWhite className='sale' text='On Sale'/>
+                        <div className="overlay">
+                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                        </div>
                     </ImageArea>
                     <Title>
                     Red Love Cup
@@ -92,6 +136,9 @@ export default function MoreProducts() {
                 <ProductSmall>
                     <ImageArea>
                         <img src={require(`../../../images/img3.jpg`)} alt=""/>
+                        <div className="overlay">
+                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                        </div>
                     </ImageArea>
                     <Title>
                     Red Love Cup
@@ -104,6 +151,9 @@ export default function MoreProducts() {
                 <ProductSmall>
                     <ImageArea>
                         <img src={require(`../../../images/img4.jpg`)} alt=""/>
+                        <div className="overlay">
+                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                        </div>
                     </ImageArea>
                     <Title>
                     Red Love Cup
@@ -116,6 +166,9 @@ export default function MoreProducts() {
                 <ProductSmall>
                     <ImageArea>
                         <img src={require(`../../../images/img5.jpg`)} alt=""/>
+                        <div className="overlay">
+                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                        </div>
                     </ImageArea>
                     <Title>
                     Red Love Cup
@@ -128,6 +181,9 @@ export default function MoreProducts() {
                 <ProductSmall>
                     <ImageArea>
                         <img src={require(`../../../images/img6.jpg`)} alt=""/>
+                        <div className="overlay">
+                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                        </div>
                     </ImageArea>
                     <Title>
                     Red Love Cup
@@ -140,6 +196,9 @@ export default function MoreProducts() {
                 <ProductSmall>
                     <ImageArea>
                         <img src={require(`../../../images/img7.jpg`)} alt=""/>
+                        <div className="overlay">
+                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                        </div>
                     </ImageArea>
                     <Title>
                     Red Love Cup
@@ -152,6 +211,9 @@ export default function MoreProducts() {
                 <ProductSmall>
                     <ImageArea>
                         <img src={require(`../../../images/mugPink.jpg`)} alt=""/>
+                        <div className="overlay">
+                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                        </div>
                     </ImageArea>
                     <Title>
                     Red Love Cup
@@ -164,6 +226,9 @@ export default function MoreProducts() {
                 <ProductSmall>
                     <ImageArea>
                         <img src={require(`../../../images/img9.jpg`)} alt=""/>
+                        <div className="overlay">
+                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                        </div>
                     </ImageArea>
                     <Title>
                     Red Love Cup

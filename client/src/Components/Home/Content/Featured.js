@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {Headline} from '../../Other/Headline';
+import ButtonWhite from '../../Other/ButtonWhite';
 
 const Price = styled.div`
     display: flex;
@@ -35,6 +36,42 @@ const ImageArea = styled.div`
         height: 540px;
         width: 460px;
     }
+    position: relative;
+    .sale {
+        position: absolute;
+        z-index: 10;
+        top: 10px;
+        right: 10px;
+        font-size: 16px;
+        padding: 12px 16px;
+        letter-spacing: normal;
+        color: #a25f4b;
+        font-weight: 700;
+    }
+    .overlay {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: background-color .2s linear, opacity .4s;
+        .btn {
+            transition: .4s;
+            margin: 1% 4%;
+            width: 92%;
+        }
+        &:hover {
+            .btn {
+                margin: 4% 4%;
+                width: 92%;
+            }
+            opacity: 1;
+            background-color: rgb(50%,50%,50%, .2);
+        }
+    }
 `;
 
 const ProductBig = styled.div`
@@ -65,6 +102,9 @@ export default function Featured() {
                 <ProductBig>
                     <ImageArea>
                         <img src={require(`../../../images/mugPink.jpg`)} alt=""/>
+                        <div className="overlay">
+                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                        </div>
                     </ImageArea>
                     <Title>
                     Pink Premium Ceramic
@@ -77,6 +117,10 @@ export default function Featured() {
                 <ProductBig>
                     <ImageArea>
                         <img src={require(`../../../images/mugBeige.jpg`)} alt=""/>
+                        <ButtonWhite className='sale' text='On Sale'/>
+                        <div className="overlay">
+                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                        </div>
                     </ImageArea>
                     <Title>
                     Golden Designers Mug
