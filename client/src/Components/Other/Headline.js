@@ -1,6 +1,7 @@
+import React from 'react';
 import styled from 'styled-components';
 
-export const Headline = styled.div`
+const Wrap = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,3 +15,10 @@ export const Headline = styled.div`
         background-color: #d2d2d2;
     }
 `;
+
+export const Headline = (props) => 
+    <Wrap className={props.className} style={props.style}>
+        <div className="deco-line"></div>
+        {props.text}
+        <div className="deco-line"></div>
+    </Wrap>

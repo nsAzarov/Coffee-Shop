@@ -60,11 +60,7 @@ const FeaturedWrap = styled.div`
 export default function Featured() {
     return (
         <FeaturedWrap>
-            <Headline style={{color: 'black'}} className='small-text-bold'>
-                <div className="deco-line"></div>
-                FEATURED MUGS
-                <div className="deco-line"></div>
-            </Headline>
+            <Headline style={{color: 'black'}} className='small-text-bold' text='FEATURED MUGS'/>
             <FeaturedCollection>
                 <ProductBig>
                     <ImageArea>

@@ -73,11 +73,7 @@ export default function index() {
         <SubscribeSection>
             <SubscribeWrap>
                 <Form>
-                    <Headline className="small-text-bold">
-                        <div className="deco-line"></div>
-                        SIGN UP AND GET FREE COFFEE BAGS
-                        <div className="deco-line"></div>
-                    </Headline>
+                    <Headline className="small-text-bold" text='SIGN UP AND GET FREE COFFEE BAGS' />
                     <SecondHeadline>Coffee Updates</SecondHeadline>
                     <SubscribeForm>
                         <input type="text" className="small-text-bold" placeholder="customer@coffeestyle.io"/>

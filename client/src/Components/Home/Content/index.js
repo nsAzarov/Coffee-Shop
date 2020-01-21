@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Description from './Description';
 import Featured from './Featured';
+import MoreProducts from './MoreProducts';
 
 const Wrap = styled.div`
     width: 940px;
@@ -19,6 +20,7 @@ export default function index() {
             <Wrap>
                 <Description />
                 <Featured />
+                <MoreProducts />
             </Wrap>
         </Content>
     )
