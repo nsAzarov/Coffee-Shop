@@ -94,6 +94,7 @@ const ProductsCollection = styled.div`
 const MoreProductsWrap = styled.div`
     display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
 `;
 
 export default function MoreProducts() {
