@@ -7,7 +7,6 @@ const TopSection = styled.div`
     display: flex;
     justify-content: center;
     width: 100%;
-    border-bottom: 1px solid black;
 `;
 
 const Wrap = styled.div`

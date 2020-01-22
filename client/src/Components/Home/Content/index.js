@@ -4,6 +4,7 @@ import Description from './Description';
 import Featured from './Featured';
 import MoreProducts from './MoreProducts';
 import Magazine from './Magazine';
+import Articles from './Articles';
 
 const Wrap = styled.div`
     width: 940px;
@@ -37,6 +38,9 @@ export default function index() {
                 <Magazine />
             </Wrap>
             <Parallax />
+            <Wrap>
+                <Articles />
+            </Wrap>
         </Content>
     )
 }
