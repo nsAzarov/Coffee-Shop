@@ -3,26 +3,8 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import {Headline} from '../../Other/Headline';
+import {DescriptionArea} from '../../Other/DescriptionArea';
 import ButtonBlack from '../../Other/ButtonBlack';
-
-const DescriptionArea = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 400px;
-    margin-left: 60px;
-    .header {
-        margin-top: 10px;
-        margin-bottom: 15px;
-        font-size: 36px;
-        line-height: 50px;
-    }
-    p {
-        color: rgba(29, 31, 46, 0.7);
-        margin-bottom: 15px;
-        line-height: 28px;
-    }
-`;
 
 const ImagesArea = styled.div`
     display: flex;
