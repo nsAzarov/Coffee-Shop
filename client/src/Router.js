@@ -4,6 +4,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 import ScrollToTop from './Components/Other/ScrollToTop';
 import Home from './Components/Home';
 import OurProducts from './Components/OurProducts';
+import Blog from './Components/Blog';
 
 const Router = () => {
     return (
@@ -11,6 +12,7 @@ const Router = () => {
             <ScrollToTop>
                 <Route path="/" exact component={Home} />
                 <Route path="/OurProducts" component={OurProducts} />
+                <Route path="/Blog" component={Blog} />
             </ScrollToTop>
         </BrowserRouter>
     )

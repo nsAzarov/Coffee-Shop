@@ -2,11 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.div`
+    cursor: pointer;
     margin: 0 5px;
     padding: 10px 16px;
-    border: 1px solid  rgba(162, 95, 75, 0.4);
-    opacity: 1;
+    border: 1px solid #a25f4b;
+    opacity: .7;
+    transition: .4s;
     color: #a25f4b;
+    &:hover {
+        opacity: 1;
+    }
 `;
 
 const Btn = (props) => {
