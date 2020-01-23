@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import {Content, Wrap} from '../../Other/ContentWrap';
 import Header from './Header';
 import Slider from './Slider';
+import Products from './Products';
 
 export default function index() {
     return (
@@ -11,6 +12,7 @@ export default function index() {
             <Wrap>
                 <Header />
                 <Slider />
+                <Products />
             </Wrap>
         </Content>
     )
