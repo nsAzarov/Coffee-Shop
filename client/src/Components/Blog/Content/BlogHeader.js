@@ -6,6 +6,6 @@ export const BlogHeader = styled.div`
     font-size: 22px;
     line-height: 32px;
     font-weight: 400;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     border-bottom: 1px solid #ececed;
 `;
