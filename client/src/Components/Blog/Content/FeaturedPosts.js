@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import {Wrap} from '../../Other/ContentWrap';
 import {Headline} from '../../Other/Headline';
+import {Description} from '../../Other/Description';
 
 const Post = styled.div`
     display: flex;
@@ -18,20 +19,6 @@ const Post = styled.div`
         object-fit: cover;
         margin-bottom: 25px;
     }
-    .title {
-        margin-bottom: 10px;
-        color: #1d1f2e;
-        font-size: 20px;
-        line-height: 32px;
-    }
-    p {
-        color: rgba(29, 31, 46, 0.7);
-        line-height: 28px;
-    }
-    .date {
-        margin-top: 20px;
-        opacity: .6;
-    }
 `;
 
 const PostsWrap = styled.div`
@@ -46,15 +33,19 @@ export default function FeaturedPosts() {
             <PostsWrap>
                 <Post>
                     <img src={require(`../../../images/Post1.jpg`)} alt=""/>
-                    <div className="title">Will drinking coffee prolong your life?</div>
-                    <p>Aliquid aperiam accusantium quam ipsam. Velit rerum veniam optio illo dolor delectus et recusandae. Impedit aut cupiditate. Illum eveniet officiis ullam ipsam sed iste eius. Nam at quae ducimus dicta delectus</p>
-                    <div className="date small-text-bold">OCTOBER 9, 2018</div>
+                    <Description>
+                        <div className="title">Will drinking coffee prolong your life?</div>
+                        <p>Aliquid aperiam accusantium quam ipsam. Velit rerum veniam optio illo dolor delectus et recusandae. Impedit aut cupiditate. Illum eveniet officiis ullam ipsam sed iste eius. Nam at quae ducimus dicta delectus</p>
+                        <div className="date small-text-bold">OCTOBER 9, 2018</div>
+                    </Description>
                 </Post>
                 <Post>
                     <img src={require(`../../../images/art2.jpg`)} alt=""/>
-                    <div className="title"> How long does a cup of coffee keep you awake?</div>
-                    <p>It is a paradisematic country, in which roasted parts. Vel qui et ad voluptatem.</p>
-                    <div className="date small-text-bold">OCTOBER 9, 2018</div>
+                    <Description>
+                        <div className="title"> How long does a cup of coffee keep you awake?</div>
+                        <p>It is a paradisematic country, in which roasted parts. Vel qui et ad voluptatem.</p>
+                        <div className="date small-text-bold">OCTOBER 9, 2018</div>
+                    </Description>
                 </Post>
             </PostsWrap>
         </Wrap>
