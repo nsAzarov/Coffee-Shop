@@ -2,41 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import {Description} from '../../Other/Description';
 import {BlogHeader} from './BlogHeader';
+import {ImageArea} from '../../Other/Products';
 import ButtonWhite from '../../Other/ButtonWhite';
-
-const ImageArea = styled.div`
-    img {
-        height: 210px;
-        width: 260px;
-        object-fit: cover;
-        margin-bottom: 25px;
-        margin-right: 40px;
-    }
-    position: relative;
-    .overlay {
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        position: absolute;
-        top: 0;
-        height: 210px;
-        width: 260px;
-        opacity: 0;
-        transition: background-color .2s linear, opacity .4s;
-        .btn {
-            transition: .4s;
-            margin: 1% 4%;
-            width: 92%;
-        }
-        &:hover {
-            .btn {
-                margin: 4% 4%;
-            }
-            opacity: 1;
-            background-color: rgb(50%,50%,50%, .2);
-        }
-    }
-`;
 
 const Post = styled.div`
     display: flex;
@@ -44,6 +11,9 @@ const Post = styled.div`
     padding-top: 20px;
     margin-right: 20px;
     margin-bottom: 30px;
+    &:last-child {
+        margin-bottom: 0;
+    }
 `;
 
 const Posts = styled.div`
@@ -56,8 +26,8 @@ export default function LatestPosts() {
             <BlogHeader>Latest Posts</BlogHeader>
             <Post>
                 <ImageArea>
-                    <img src={require(`../../../images/Post1.jpg`)} alt=""/>
-                    <div className="overlay">
+                    <img src={require(`../../../images/Post1.jpg`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}} alt=""/>
+                    <div className="overlay" style={{height: '210px', width: '260px'}}>
                         <ButtonWhite className='btn small-text-bold' text='READ THE FULL STORY'/>
                     </div>
                 </ImageArea>
@@ -69,8 +39,8 @@ export default function LatestPosts() {
             </Post>
             <Post>
                 <ImageArea>
-                    <img src={require(`../../../images/Post2.jpg`)} alt=""/>
-                    <div className="overlay">
+                    <img src={require(`../../../images/Post2.jpg`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}}  alt=""/>
+                    <div className="overlay" style={{height: '210px', width: '260px'}}>
                         <ButtonWhite className='btn small-text-bold' text='READ THE FULL STORY'/>
                     </div>
                 </ImageArea>
@@ -82,8 +52,8 @@ export default function LatestPosts() {
             </Post>
             <Post>
                 <ImageArea>
-                    <img src={require(`../../../images/art2.jpg`)} alt=""/>
-                    <div className="overlay">
+                    <img src={require(`../../../images/art2.jpg`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}}  alt=""/>
+                    <div className="overlay" style={{height: '210px', width: '260px'}}>
                         <ButtonWhite className='btn small-text-bold' text='READ THE FULL STORY'/>
                     </div>
                 </ImageArea>
@@ -95,8 +65,8 @@ export default function LatestPosts() {
             </Post>
             <Post>
                 <ImageArea>
-                    <img src={require(`../../../images/art3.jpg`)} alt=""/>
-                    <div className="overlay">
+                    <img src={require(`../../../images/art3.jpg`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}}  alt=""/>
+                    <div className="overlay" style={{height: '210px', width: '260px'}}>
                         <ButtonWhite className='btn small-text-bold' text='READ THE FULL STORY'/>
                     </div>
                 </ImageArea>
@@ -108,8 +78,8 @@ export default function LatestPosts() {
             </Post>
             <Post>
                 <ImageArea>
-                    <img src={require(`../../../images/art1.jpg`)} alt=""/>
-                    <div className="overlay">
+                    <img src={require(`../../../images/art1.jpg`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}}  alt=""/>
+                    <div className="overlay" style={{height: '210px', width: '260px'}}>
                         <ButtonWhite className='btn small-text-bold' text='READ THE FULL STORY'/>
                     </div>
                 </ImageArea>

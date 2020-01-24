@@ -63,7 +63,6 @@ const AboutUs = styled.div`
 `;
 
 const Container = styled.div`
-    height: 1000px;
     width: 300px;
 `;
 

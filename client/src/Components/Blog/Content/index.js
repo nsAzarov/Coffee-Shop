@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import {Content, WideWrap, Wrap} from '../../Other/ContentWrap';
 import FeaturedPosts from './FeaturedPosts';
 import BlogFeed from './BlogFeed';
+import OwnersQuote from './OwnersQuote';
 
 const Text = styled.div`
     text-align: center;
@@ -45,6 +46,7 @@ export default function index() {
                 </DecoBlock>
                 <FeaturedPosts />
                 <BlogFeed />
+                <OwnersQuote />
             </WideWrap>
         </Content>
     )
