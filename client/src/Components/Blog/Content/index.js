@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import {Content, WideWrap, Wrap, DecoBlock, Text} from '../../Other/ContentWrap';
 import FeaturedPosts from './FeaturedPosts';

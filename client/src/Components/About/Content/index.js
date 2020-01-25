@@ -2,6 +2,7 @@ import React from 'react';
 import {Content, WideWrap, Wrap, DecoBlock, Text} from '../../Other/ContentWrap';
 import Introductions from './Introductions';
 import Articles from './Articles';
+import Authors from './Authors';
 
 export default function index() {
     return (
@@ -17,6 +18,7 @@ export default function index() {
                 </DecoBlock>
                 <Introductions />
                 <Articles />
+                <Authors />
             </WideWrap>
         </Content>
     )
