@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 const Nav = styled.div`
@@ -36,31 +37,31 @@ export default function NavMenu() {
         <Nav>
             <MenuItemWrap>
                 <MenuItem className="small-text-bold">
-                HOME
+                <Link to='/'>HOME</Link>
                 </MenuItem>
                 <MenuItemDecoLine />
             </MenuItemWrap>
             <MenuItemWrap>
                 <MenuItem className="small-text-bold">
-                OUR PRODUCTS
+                <Link to='/OurProducts'>OUR PRODUCTS</Link>
                 </MenuItem>
                 <MenuItemDecoLine />
             </MenuItemWrap>
             <MenuItemWrap>
                 <MenuItem className="small-text-bold">
-                BLOG
+                <Link to='/Blog'>BLOG</Link>
                 </MenuItem>
                 <MenuItemDecoLine />
             </MenuItemWrap>
             <MenuItemWrap>
                 <MenuItem className="small-text-bold">
-                ABOUT
+                <Link to='/About'>ABOUT</Link>
                 </MenuItem>
                 <MenuItemDecoLine />
             </MenuItemWrap>
             <MenuItemWrap>
                 <MenuItem className="small-text-bold">
-                CONTACT
+                <Link to='/About'>CONTACT</Link>
                 </MenuItem>
                 <MenuItemDecoLine />
             </MenuItemWrap>

@@ -15,6 +15,7 @@ const Router = () => {
                 <Route path="/OurProducts" component={OurProducts} />
                 <Route path="/Blog" component={Blog} />
                 <Route path="/About" component={About} />
+                <Route path="/Contact" component={About} />
             </ScrollToTop>
         </BrowserRouter>
     )

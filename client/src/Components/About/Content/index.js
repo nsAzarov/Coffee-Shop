@@ -1,6 +1,7 @@
 import React from 'react';
 import {Content, WideWrap, Wrap, DecoBlock, Text} from '../../Other/ContentWrap';
 import Introductions from './Introductions';
+import Articles from './Articles';
 
 export default function index() {
     return (
@@ -15,6 +16,7 @@ export default function index() {
                     </Wrap>
                 </DecoBlock>
                 <Introductions />
+                <Articles />
             </WideWrap>
         </Content>
     )

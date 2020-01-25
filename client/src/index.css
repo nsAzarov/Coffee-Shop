@@ -9,6 +9,7 @@ button {
   cursor: pointer;
 }
 
+a {text-decoration: none;}
 a:active, a:visited{color: inherit} 
 
 .small-text {
