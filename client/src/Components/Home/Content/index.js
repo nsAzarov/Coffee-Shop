@@ -5,6 +5,7 @@ import Featured from './Featured';
 import MoreProducts from './MoreProducts';
 import Magazine from './Magazine';
 import Articles from './Articles';
+import {Parallax} from '../../Other/Parallax';
 
 const Wrap = styled.div`
     width: 940px;
@@ -18,15 +19,7 @@ const Content = styled.div`
     width: 100%;
 `;
 
-const Parallax = styled.div`
-    height: 340px;
-    width: 100%;
-    margin-bottom: 100px;
-    background-image: url(${require(`../../../images/plx.jpg`)});
-    background-position: 50% 50%;
-    background-size: cover;
-    background-attachment: fixed;
-`;
+const Image = require(`../../../images/plx.jpg`);
 
 export default function index() {
     return (
@@ -37,7 +30,7 @@ export default function index() {
                 <MoreProducts />
                 <Magazine />
             </Wrap>
-            <Parallax />
+            <Parallax Image={Image}/>
             <Wrap>
                 <Articles />
             </Wrap>

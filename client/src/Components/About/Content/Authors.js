@@ -28,7 +28,7 @@ const AuthorsWrap = styled.div`
     display: flex;
     justify-content: space-between;
     width: 940px;
-    margin-top: 100px;
+    margin: 100px 0 130px 0;
 `;
 
 export default function Authors() {
