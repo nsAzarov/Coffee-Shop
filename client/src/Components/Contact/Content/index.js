@@ -2,6 +2,7 @@ import React from 'react';
 
 import {Content, WideWrap, Wrap, DecoBlock, Text} from '../../Other/ContentWrap';
 import OurOffices from './OurOffices';
+import ContactForm from './ContactForm';
 
 export default function index() {
     return (
@@ -17,6 +18,7 @@ export default function index() {
                 </DecoBlock>
             </WideWrap>
             <OurOffices />
+            <ContactForm />
         </Content>
     )
 }
