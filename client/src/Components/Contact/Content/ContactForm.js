@@ -63,13 +63,15 @@ const LeftArea = styled.div`
 
 const FormWrap = styled.div`
     display: flex;
+    background-color: white;
+    z-index: 10;
     border: 1px solid rgba(210, 210, 213, 0.5);
     padding: 60px;
 `;
 
 export default function ContactForm() {
     return (
-        <Wrap style={{marginTop: '100px'}}>
+        <Wrap style={{margin: '100px 0 50px 0'}}>
             <FormWrap>
                 <LeftArea>
                     <Headline style={{color: 'black'}} className='small-text-bold' text='CONTACT FORM' />
