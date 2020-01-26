@@ -25,6 +25,14 @@ a:active, a:visited{color: inherit}
   letter-spacing: 2px;
 }
 
+.opacity6 {
+  opacity: .6;
+}
+
+.opacity7 {
+  opacity: .7;
+}
+
 .middle-text {
   font-size: 14px;
   line-height: 22px;

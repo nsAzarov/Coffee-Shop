@@ -6,6 +6,7 @@ import Home from './Components/Home';
 import OurProducts from './Components/OurProducts';
 import Blog from './Components/Blog';
 import About from './Components/About';
+import Contact from './Components/Contact';
 
 const Router = () => {
     return (
@@ -15,7 +16,7 @@ const Router = () => {
                 <Route path="/OurProducts" component={OurProducts} />
                 <Route path="/Blog" component={Blog} />
                 <Route path="/About" component={About} />
-                <Route path="/Contact" component={About} />
+                <Route path="/Contacts" component={Contact} />
             </ScrollToTop>
         </BrowserRouter>
     )

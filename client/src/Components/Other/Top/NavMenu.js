@@ -20,7 +20,7 @@ const MenuItemWrap = styled.div`
     }
 `;
 
-const MenuItem = styled.a`
+const MenuItem = styled(Link)`
     color: #1d1f2e;
     margin: 2px 0px;
     text-decoration: none;
@@ -36,33 +36,23 @@ export default function NavMenu() {
     return (
         <Nav>
             <MenuItemWrap>
-                <MenuItem className="small-text-bold">
-                <Link to='/'>HOME</Link>
-                </MenuItem>
+                <MenuItem className="small-text-bold" to='/'>HOME</MenuItem>
                 <MenuItemDecoLine />
             </MenuItemWrap>
             <MenuItemWrap>
-                <MenuItem className="small-text-bold">
-                <Link to='/OurProducts'>OUR PRODUCTS</Link>
-                </MenuItem>
+                <MenuItem className="small-text-bold" to='/OurProducts'>OUR PRODUCTS</MenuItem>
                 <MenuItemDecoLine />
             </MenuItemWrap>
             <MenuItemWrap>
-                <MenuItem className="small-text-bold">
-                <Link to='/Blog'>BLOG</Link>
-                </MenuItem>
+                <MenuItem className="small-text-bold" to='/Blog'>BLOG</MenuItem>
                 <MenuItemDecoLine />
             </MenuItemWrap>
             <MenuItemWrap>
-                <MenuItem className="small-text-bold">
-                <Link to='/About'>ABOUT</Link>
-                </MenuItem>
+                <MenuItem className="small-text-bold" to='/About'>ABOUT</MenuItem>
                 <MenuItemDecoLine />
             </MenuItemWrap>
             <MenuItemWrap>
-                <MenuItem className="small-text-bold">
-                <Link to='/About'>CONTACT</Link>
-                </MenuItem>
+                <MenuItem className="small-text-bold" to='/Contacts'>CONTACT</MenuItem>
                 <MenuItemDecoLine />
             </MenuItemWrap>
         </Nav>
