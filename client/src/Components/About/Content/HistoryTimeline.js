@@ -57,9 +57,9 @@ const TimelineWrap = styled.div`
 
 export default function HistoryTimeline() {
     return (
-        <TimelineWrap>
+        <TimelineWrap data-aos="fade-up">
             <Headline style={{color: 'black', marginBottom: '100px'}} className='small-text-bold' text='HISTORY TIMELINE' />
-            <Timeline>
+            <Timeline data-aos="fade-up">
                 <div className="num">04</div>
                 <div className="small-text-bold" style={{opacity: '0.6'}}>OCTOBER 2018</div>
                 <div className="event-name">One day however a small line</div>
@@ -67,7 +67,7 @@ export default function HistoryTimeline() {
                 <div className="bottom-deco-line"></div>
                 <div className="second-deco-line"></div>
             </Timeline>
-            <Timeline>
+            <Timeline data-aos="fade-up">
                 <div className="num">03</div>
                 <div className="small-text-bold" style={{opacity: '0.6'}}>AUGUST 2018</div>
                 <div className="event-name">Overlaid the jeepers uselessly</div>
@@ -75,7 +75,7 @@ export default function HistoryTimeline() {
                 <div className="bottom-deco-line"></div>
                 <div className="second-deco-line"></div>
             </Timeline>
-            <Timeline>
+            <Timeline data-aos="fade-up">
                 <div className="num">02</div>
                 <div className="small-text-bold" style={{opacity: '0.6'}}>JUNE 2018</div>
                 <div className="event-name">Pointing has no control about</div>
@@ -83,7 +83,7 @@ export default function HistoryTimeline() {
                 <div className="bottom-deco-line"></div>
                 <div className="second-deco-line"></div>
             </Timeline>
-            <Timeline>
+            <Timeline data-aos="fade-up">
                 <div className="num">01</div>
                 <div className="small-text-bold" style={{opacity: '0.6'}}>NOVEMBER 2017</div>
                 <div className="event-name">We've started CoffeeStyle.</div>

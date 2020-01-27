@@ -29,9 +29,9 @@ const QuoteWrap = styled.div`
 
 export default function OwnersQuote() {
     return (
-        <QuoteWrap>
+        <QuoteWrap data-aos="fade-up">
             <blockquote>"I wake up some mornings and sit and have my coffee and look out at my beautiful garden, and I go, ’Remember how good this is. Because you can lose it."</blockquote>
-            <div className="small-text-bold" style={{opacity: '0.3'}}>JASON JOHNSON - OWNER OF COFFEESTYLE</div>
+            <div className="small-text-bold" style={{opacity: '0.3'}}>JASON JOHNSON - OWNER OF COFFEESHOP</div>
         </QuoteWrap>
     )
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
+import {Content} from '../../Other/ContentWrap';
+
 const GridElem = styled.div`
     .logo {
         font-size: 21px;
@@ -37,14 +39,9 @@ const Wrap = styled.div`
     cursor: default;
 `;
 
-const FooterSection = styled.div`
-    display: flex;
-    justify-content: center;
-`;
-
 export default function index() {
     return (
-        <FooterSection>
+        <Content>
             <Wrap  className='middle-text'>
                 <GridElem>
                     <div className="logo">CoffeeShop</div>
@@ -79,6 +76,6 @@ export default function index() {
                     <h2>qwe@gmail.com</h2>
                 </GridElem>
             </Wrap>
-        </FooterSection>
+        </Content>
     )
 }

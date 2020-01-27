@@ -71,7 +71,7 @@ const SubscribeSection = styled.div`
 export default function index() {
     return (
         <SubscribeSection>
-            <SubscribeWrap>
+            <SubscribeWrap data-aos="fade-up">
                 <Form>
                     <Headline className="small-text-bold" text='SIGN UP AND GET FREE COFFEE BAGS' />
                     <SecondHeadline>Coffee Updates</SecondHeadline>

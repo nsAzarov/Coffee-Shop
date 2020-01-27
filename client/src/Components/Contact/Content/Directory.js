@@ -27,22 +27,22 @@ const ThreeBlocks = styled.div`
 
 export default function Directory() {
     return (
-        <Wrap>
+        <Wrap data-aos="fade-up">
             <Headline style={{color: 'black', margin: '100px 0'}} className='small-text-bold' text='DIRECTORY' />
             <ThreeBlocks>
-                <Contact>
+                <Contact data-aos="fade-up">
                     <div className="small-text-bold opacity6">PRESS</div>
                     <div className="name">Robb Kohler</div>
                     <div className="phone">086-374-4962</div>
                     <div className="email">robb.kohler@coffeestyle.com</div>
                 </Contact>
-                <Contact>
+                <Contact data-aos="fade-up">
                     <div className="small-text-bold opacity6">MANAGEMENT</div>
                     <div className="name">Roob Dayana</div>
                     <div className="phone">354-341-2750</div>
                     <div className="email">roob.dayana@coffeestyle.com</div>
                 </Contact>
-                <Contact>
+                <Contact data-aos="fade-up">
                     <div className="small-text-bold opacity6">SUPPORT</div>
                     <div className="name">Warren Marsh</div>
                     <div className="phone">531-403-0376</div>

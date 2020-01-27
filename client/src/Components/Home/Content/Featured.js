@@ -53,10 +53,10 @@ const FeaturedWrap = styled.div`
 
 export default function Featured() {
     return (
-        <FeaturedWrap>
+        <FeaturedWrap data-aos="fade-up">
             <Headline style={{color: 'black'}} className='small-text-bold' text='FEATURED MUGS'/>
             <FeaturedCollection>
-                <ProductBig>
+                <ProductBig data-aos="fade-up">
                     <ImageArea>
                         <img src={require(`../../../images/mugPink.jpg`)} alt=""/>
                         <div className="overlay">
@@ -71,7 +71,7 @@ export default function Featured() {
                         <div className="old-price">$ 99.00 USD</div>
                     </Price>
                 </ProductBig>
-                <ProductBig>
+                <ProductBig data-aos="fade-up">
                     <ImageArea>
                         <img src={require(`../../../images/mugBeige.jpg`)} alt=""/>
                         <ButtonWhite className='sale' text='On Sale'/>

@@ -1,5 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import ScrollToTop from './Components/Other/ScrollToTop';
 import Home from './Components/Home';
@@ -9,6 +11,11 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 
 const Router = () => {
+    AOS.init({
+        duration: 700,
+        easing: 'ease',
+        once: true
+    });
     return (
         <BrowserRouter>
             <ScrollToTop>

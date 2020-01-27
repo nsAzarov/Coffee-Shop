@@ -48,10 +48,10 @@ const MagazineSection = styled.div`
 
 export default function Magazine() {
     return (
-        <MagazineSection>
+        <MagazineSection data-aos="fade-up">
             <MagazineWrap>
                 <Headline style={{color: 'black'}} className='small-text-bold' text='BUY 2 MUGS AND GET A COFFEE MAGAZINE FREE' />
-                <Content>
+                <Content data-aos="fade-up">
                     <ImagesArea>
                         <img src={require(`../../../images/magazine1.jpg`)} alt=""/>
                         <div className="small-images">

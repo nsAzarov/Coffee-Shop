@@ -58,7 +58,7 @@ const ArticlesSection = styled.div`
 export default function Articles() {
     return (
         <ArticlesSection>
-            <Article>
+            <Article data-aos="fade-up">
                 <img src={require(`../../../images/article1.jpg`)} alt=""/>
                 <ArticleText>
                     <h3>Overlaid the jeepers uselessly much excluding everyday life.</h3>
@@ -66,7 +66,7 @@ export default function Articles() {
                     <p>It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
                 </ArticleText>
             </Article>
-            <Article>
+            <Article data-aos="fade-left">
                 <img src={require(`../../../images/slide1.jpg`)} alt=""/>
                 <ArticleText>
                     <h3>Overlaid the jeepers uselessly much excluding everyday life.</h3>

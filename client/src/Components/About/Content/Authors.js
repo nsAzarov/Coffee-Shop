@@ -34,8 +34,8 @@ const AuthorsWrap = styled.div`
 export default function Authors() {
     return (
         <>
-        <Headline style={{color: 'black'}} className='small-text-bold' text='INTRODUCTIONS' />
-        <AuthorsWrap>
+        <Headline style={{color: 'black'}} className='small-text-bold' text='AUTHORS' />
+        <AuthorsWrap data-aos="fade-right">
             <Author>
                 <img src={require(`../../../images/photo1.jpg`)} alt=""/>
                 <h3>Fred Gleason</h3>

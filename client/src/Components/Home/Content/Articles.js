@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Headline } from '../../Other/Headline';
+
+import {Headline} from '../../Other/Headline';
 
 const Article = styled.div`
     display: flex;
@@ -51,23 +52,23 @@ const ArticlesSection = styled.div`
 
 export default function Articles() {
     return (
-        <ArticlesSection>
+        <ArticlesSection data-aos="fade-up">
             <Wrap>
                 <Headline style={{color: 'black'}} className='small-text-bold' text='BEHIND THE MUGS, LIFESTYLE STORIES'/>
                 <ArticlesWrap>
-                    <Article>
+                    <Article data-aos="fade-up">
                         <img src={require(`../../../images/art1.jpg`)} alt=""/>
                         <div className="title">Health Check: why do I get a headache when I haven’t had my coffee?</div>
                         <p>It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                         <div className="date small-text-bold">OCTOBER 9, 2018</div>
                     </Article>
-                    <Article>
+                    <Article data-aos="fade-up">
                         <img src={require(`../../../images/art2.jpg`)} alt=""/>
                         <div className="title"> How long does a cup of coffee keep you awake?</div>
                         <p>It is a paradisematic country, in which roasted parts. Vel qui et ad voluptatem.</p>
                         <div className="date small-text-bold">OCTOBER 9, 2018</div>
                     </Article>
-                    <Article>
+                    <Article data-aos="fade-up">
                         <img src={require(`../../../images/art3.jpg`)} alt=""/>
                         <div className="title">Recent research suggests that heavy coffee drinkers may reap health benefits. </div>
                         <p>It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>

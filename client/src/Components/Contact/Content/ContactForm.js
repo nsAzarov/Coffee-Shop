@@ -72,7 +72,7 @@ const FormWrap = styled.div`
 export default function ContactForm() {
     return (
         <Wrap style={{margin: '100px 0 50px 0'}}>
-            <FormWrap>
+            <FormWrap data-aos="fade-up">
                 <LeftArea>
                     <Headline style={{color: 'black'}} className='small-text-bold' text='CONTACT FORM' />
                     <div className='contact-form-headline'>Drop us your message and I'll get back to you as soon as possible.</div>
