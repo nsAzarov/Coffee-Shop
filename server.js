@@ -16,6 +16,8 @@ mongoose
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err));
 
+const Product = require(`./models/Product`);
+
 if (process.env.NODE_ENV === "production") {
     app.use(express.static('client/build'));
 

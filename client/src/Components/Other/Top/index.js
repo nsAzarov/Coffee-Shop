@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import NavMenu from './NavMenu';
 import CartButton from './CartButton';
@@ -26,7 +26,8 @@ const MenuIcon = styled.div`
     display: none;
 `;
 
-export default function index() {
+export default function Main() {
+    const [demoCartOpened] = useState(false);
     return (
         <TopSection>
             <Wrap>
@@ -35,7 +36,7 @@ export default function index() {
                 <CartButton />
                 <MenuIcon></MenuIcon>
             </Wrap>
-            <DemoCart />
+            {demoCartOpened ? <DemoCart /> : null}
         </TopSection>
     )
 }
