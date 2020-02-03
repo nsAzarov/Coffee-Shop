@@ -15,7 +15,7 @@ const Button = styled.button`
 
 export default function ButtonWhite(props) {
     return (
-        <Button onClick={() => props.onClick} className={props.className}>
+        <Button onClick={() => props.onClick} className={props.className} style={props.style}>
             {props.text}
         </Button>
     )

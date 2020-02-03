@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import NavMenu from './NavMenu';
 import CartButton from './CartButton';
+import DemoCart from '../DemoCart/index';
 
 const TopSection = styled.div`
     display: flex;
@@ -34,6 +35,7 @@ export default function index() {
                 <CartButton />
                 <MenuIcon></MenuIcon>
             </Wrap>
+            <DemoCart />
         </TopSection>
     )
 }
