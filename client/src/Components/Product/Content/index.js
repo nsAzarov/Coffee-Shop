@@ -3,12 +3,14 @@ import React from 'react';
 import {Content} from '../../Other/ContentWrap';
 import ProductInfo from './ProductInfo';
 import Premium from './Premium';
+import Recommendations from './Recommendations';
 
 export default function index() {
     return (
         <Content>
             <ProductInfo />
             <Premium />
+            <Recommendations />
         </Content>
     )
 }

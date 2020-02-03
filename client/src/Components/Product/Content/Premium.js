@@ -69,6 +69,7 @@ const PremiumSection = styled.div`
     display: flex;
     height: 460px;
     width: 100%;
+    margin-bottom: 105px;
     background-color: #1d1f2e;
 `;
 
