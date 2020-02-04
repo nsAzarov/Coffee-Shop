@@ -85,18 +85,19 @@ const InfoSection = styled.div`
     }
 `;
 
-export default function ProductInfo() {
+export default function ProductInfo(props) {
+    const {img, name, description, details, oldPrice, newPrice, length, height, width, weight} = props.data.product;
     return (
         <Wrap>
             <InfoSection>
-                <img src={require(`../../../images/mugPink.jpg`)} alt=""/>
+                <img src={require(`../../../images/${img}`)} alt=""/>
                 <ProductDescription>
-                    <h1>Pink Premium Ceramic</h1>
-                    <p>A et quia qui quia. Sunt tempore est sit facilis. Ducimus est ut neque sunt eum iusto. Consequatur quia occaecati enim omnis repudiandae labore.</p>
+                    <h1>{name}</h1>
+                    <p>{description}</p>
                     <form>
-                        <div className="price">$ 99.00 USD</div>
-                        <label for='quantity' className='small-text-bold opacity6'>QUANTITY</label>
-                        <input name='quantity' className='small-text-bold' type='number' value='1'/>
+                        <div className="price">$ {oldPrice}.00 USD</div>
+                        <label className='small-text-bold opacity6'>QUANTITY</label>
+                        <input name='quantity' className='small-text-bold' type='number' value='1' onChange={() => null}/>
                         <ButtonBlack className='small-text-bold' text='ADD TO CART' style={{display: 'inline-block'}}/>
                     </form>
                 </ProductDescription>
@@ -104,17 +105,15 @@ export default function ProductInfo() {
             <InfoSection>
                 <div className="details">
                     <div className="small-text-bold opacity6">DETAILS</div>
-                    <p>
-                    Aut dicta iusto neque ea voluptates. Id cupiditate cum sequi eum neque dolorem dicta quisquam non. Quas vel perferendis accusantium eum cum voluptates libero doloribus voluptates. A et quia qui quia. Sunt tempore est sit facilis. Ducimus est ut neque sunt eum iusto. Consequatur quia occaecati enim omnis repudiandae labore.
-                    </p>
+                    <p>{details}</p>
                 </div>
                 <div className="dimensions">
                     <div className="small-text-bold opacity6">DETAILS</div>
                     <ul>
-                        <li><span>Lenght (in):</span>45.0</li>
-                        <li><span>Height (in):</span>98.0</li>
-                        <li><span>Width (in):</span>56.0</li>
-                        <li><span>Weight (oz):</span>200.0</li>
+                        <li><span>Lenght (in):</span>{length}.0</li>
+                        <li><span>Height (in):</span>{height}.0</li>
+                        <li><span>Width (in):</span>{width}.0</li>
+                        <li><span>Weight (oz):</span>{weight}.0</li>
                     </ul>
                 </div>
             </InfoSection>

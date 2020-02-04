@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 const ProductSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
+    productID: {
+        type: Number,
+        required: true
+    },
     img: {
         type: String,
         required: true
@@ -27,12 +31,10 @@ const ProductSchema = new Schema({
         type: String,
         required: true
     },
-    dimensions: {
-        length: {type: Number, required: true},
-        height: {type: Number, required: true},
-        width: {type: Number, required: true},
-        weight: {type: Number, required: true}
-    }
+    length: {type: Number, required: true},
+    height: {type: Number, required: true},
+    width: {type: Number, required: true},
+    weight: {type: Number, required: true}
 }, {collection: 'Products'});
 
 module.exports = Product = mongoose.model('Product', ProductSchema);

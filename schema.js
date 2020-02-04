@@ -31,10 +31,44 @@ const RocketType = new GraphQLObjectType({
     })
 });
 
-// Root Query
+const ProductType = new GraphQLObjectType({
+    name: 'Product',
+    fields: () => ({
+        _id: { type: GraphQLString },
+        productID: { type: GraphQLInt },
+        img: { type: GraphQLString },
+        name: { type: GraphQLString },
+        description: { type: GraphQLString },
+        details: { type: GraphQLString },
+        oldPrice: { type: GraphQLInt },
+        newPrice: { type: GraphQLInt },
+        length: { type: GraphQLInt },
+        height: { type: GraphQLInt },
+        width: { type: GraphQLInt },
+        weight: { type: GraphQLInt }
+    })
+});
+
+const Product = require('./models/Product');
+
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
+        products: {
+            type: new GraphQLList(ProductType),
+            resolve(parent, args) {
+                return Product.find({})
+            }
+        },
+        product: {
+            type: ProductType,
+            args: {
+                ID: { type: GraphQLInt }
+            },
+            resolve(parent, args) {
+                return Product.findOne({ productID: args.ID })
+            }
+        },
         launches: {
             type: new GraphQLList(LaunchType),
             resolve(parent, args) {

@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components';
 
 import {MoreProductsWrap, ProductsCollection, ProductSmall, ImageArea, Title, Price} from '../../Other/Products';
 import { Headline } from '../../Other/Headline';

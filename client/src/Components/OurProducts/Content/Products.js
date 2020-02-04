@@ -1,149 +1,51 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import gql from 'graphql-tag';
+import {Query} from 'react-apollo';
 
 import ButtonWhite from '../../Other/ButtonWhite';
 import {MoreProductsWrap, ProductsCollection, ProductSmall, ImageArea, Title, Price} from '../../Other/Products';
+
+const GET_PRODUCTS_QUERY = gql`
+    query GetProducts {
+        products {
+            productID
+            img
+            name
+            oldPrice
+            newPrice
+        }
+    }
+`;
 
 export default function Products() {
     return (
         <MoreProductsWrap>
             <ProductsCollection>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img1.jpg`)} alt=""/>
-                        <ButtonWhite className='sale' text='On Sale'/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price">$25.00</div>
-                        <div className="old-price">$ 37.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img2.jpg`)} alt=""/>
-                        <ButtonWhite className='sale' text='On Sale'/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price">$25.00</div>
-                        <div className="old-price">$ 37.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img3.jpg`)} alt=""/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price"></div>
-                        <div className="old-price">$ 19.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img4.jpg`)} alt=""/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price"></div>
-                        <div className="old-price">$ 19.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img5.jpg`)} alt=""/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price"></div>
-                        <div className="old-price">$ 19.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img6.jpg`)} alt=""/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price"></div>
-                        <div className="old-price">$ 19.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img7.jpg`)} alt=""/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price"></div>
-                        <div className="old-price">$ 19.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/mugPink.jpg`)} alt=""/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price"></div>
-                        <div className="old-price">$ 19.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img9.jpg`)} alt=""/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price"></div>
-                        <div className="old-price">$ 19.00 USD</div>
-                    </Price>
-                </ProductSmall>
+                <Query query={GET_PRODUCTS_QUERY}>
+                    {({ loading, error, data }) => {
+                        if (loading) return null;
+                        if (error) console.log(error);
+                        return data.products.map((prod, i) => {
+                            return <ProductSmall key={i} data-aos="fade-up">
+                                <ImageArea>
+                                    <img src={require(`../../../images/${prod.img}`)} alt=""/>
+                                    {prod.newPrice ? <ButtonWhite className='sale' text='On Sale'/> : null}
+                                    <Link to={`/Product/${prod.productID}`} className="overlay">
+                                        <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                                    </Link>
+                                </ImageArea>
+                                <Title>
+                                {prod.name}
+                                </Title>
+                                <Price>
+                                    {prod.newPrice ? <div className="new-price">${prod.newPrice}.00</div> : null}
+                                    <div className="old-price">$ {prod.oldPrice}.00 USD</div>
+                                </Price>
+                            </ProductSmall>
+                        })
+                    }}
+                </Query>
             </ProductsCollection>
         </MoreProductsWrap>
     )

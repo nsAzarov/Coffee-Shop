@@ -5,11 +5,11 @@ import ContentSection from './Content';
 import SubscribeSection from '../Other/Subscribe';
 import FooterSection from '../Other/Footer';
 
-export default function index() {
+export default function index(props) {
     return (
         <>
             <TopSection />
-            <ContentSection />
+            <ContentSection ID={props.match.params.id}/>
             <SubscribeSection />
             <FooterSection />
         </>
