@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const schema = require('./schema');
+const graphqlHTTP = require('express-graphql');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -8,6 +10,13 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(
+    '/graphql',
+    graphqlHTTP({
+        schema,
+        graphiql: true
+    })
+);
 
 const db = require('./config/keys').mongoURI;
 
@@ -15,8 +24,6 @@ mongoose
     .connect(db, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err));
-
-const Product = require(`./models/Product`);
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static('client/build'));
