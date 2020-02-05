@@ -8,7 +8,7 @@ import Premium from './Premium';
 import Recommendations from './Recommendations';
 
 const GET_PRODUCT_QUERY = gql`
-    query GetProducts($ID: Int!) {
+    query GetProduct($ID: Int!) {
         product(ID: $ID) {
             img
             name
@@ -31,7 +31,7 @@ export default function index(props) {
                 {({ loading, error, data }) => {
                     if (loading) return <h1>adf</h1>;
                     if (error) console.log(error);
-                    console.log(data.product)
+
                     return <ProductInfo data={data}/>
                 }}
             </Query>

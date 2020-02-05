@@ -8,6 +8,7 @@ import Home from './Components/Home';
 import OurProducts from './Components/OurProducts';
 import Product from './Components/Product';
 import Blog from './Components/Blog';
+import Article from './Components/Article';
 import About from './Components/About';
 import Contact from './Components/Contact';
 
@@ -24,6 +25,7 @@ const Router = () => {
                 <Route path="/OurProducts" component={OurProducts} />
                 <Route path="/Product/:id" exact component={Product}/>
                 <Route path="/Blog" component={Blog} />
+                <Route path="/Article/:id" exact component={Article} />
                 <Route path="/About" component={About} />
                 <Route path="/Contacts" component={Contact} />
             </ScrollToTop>

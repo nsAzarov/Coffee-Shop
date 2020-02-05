@@ -3,7 +3,14 @@ const Schema = mongoose.Schema;
 
 const ArticleSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    authorID: mongoose.Schema.Types.ObjectId,
+    articleID: {
+        type: Number,
+        required: true
+    },
+    authorID: {
+        type: Number,
+        required: true
+    },
     img: {
         type: String,
         required: true

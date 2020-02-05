@@ -110,7 +110,7 @@ export default function ProductInfo(props) {
                 <div className="dimensions">
                     <div className="small-text-bold opacity6">DETAILS</div>
                     <ul>
-                        <li><span>Lenght (in):</span>{length}.0</li>
+                        <li><span>Length  (in):</span>{length}.0</li>
                         <li><span>Height (in):</span>{height}.0</li>
                         <li><span>Width (in):</span>{width}.0</li>
                         <li><span>Weight (oz):</span>{weight}.0</li>

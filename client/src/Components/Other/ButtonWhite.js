@@ -1,7 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-const Button = styled.button`
+const Button = styled(Link)`
     padding: 18px 24px;
     color: #1d1f2e;
     background-color: #fff;
@@ -15,7 +16,7 @@ const Button = styled.button`
 
 export default function ButtonWhite(props) {
     return (
-        <Button onClick={() => props.onClick} className={props.className} style={props.style}>
+        <Button to={props.to} onClick={() => props.onClick} className={props.className} style={props.style}>
             {props.text}
         </Button>
     )
