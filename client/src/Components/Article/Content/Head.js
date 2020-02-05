@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-import {Content, WideWrap, Wrap, DecoBlock, Text} from '../../Other/ContentWrap';
+import {Wrap} from '../../Other/ContentWrap';
 
 const LinkLine = styled.div`
     color: #a25f4b;
@@ -45,15 +45,16 @@ const HeadPost = styled.div`
     }
 `;
 
-export default function Head() {
+export default function Head(props) {
+    const {title, description} = props.article;
     return (
         <Wrap>
             <HeadPost>
                 <LinkLine>
                     <Link to='/Blog' className='small-text-bold opacity6'>BLOG</Link><p>&nbsp;/&nbsp;</p><Link to='/Blog' className='small-text-bold opacity6'>COFFEE</Link>
                 </LinkLine>
-                <h1>Will drinking coffee prolong your life?</h1>
-                <p>Aliquid aperiam accusantium quam ipsam. Velit rerum veniam optio illo dolor delectus et recusandae. Impedit aut cupiditate. Illumeveniet officiis ullam ipsam sed iste eius. Nam at quae ducimus dicta delectus</p>
+                <h1>{title}</h1>
+                <p>{description}</p>
             </HeadPost>
         </Wrap>
     )

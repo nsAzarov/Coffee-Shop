@@ -2,7 +2,44 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-const Text = styled.div``;
+const Text = styled.div`
+    margin-bottom: 100px;
+    h2 {
+        margin-top: 20px;
+        margin-bottom: 15px;
+        font-size: 28px;
+        line-height: 40px;
+        font-weight: 400;
+    }
+    h3 {
+        margin-top: 10px;
+        margin-bottom: 15px;
+        align-self: auto;
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 400;
+    }
+    p {
+        margin-bottom: 15px;
+        color: rgba(29, 31, 46, 0.7);
+        line-height: 28px;
+        font-weight: 400;
+    }
+    blockquote {
+        display: block;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 35px;
+        border-top: 1px none #ececed;
+        border-bottom: 2px solid rgba(162, 95, 75, 0.2);
+        border-left: 2px solid rgba(162, 95, 75, 0.2);
+        background-color: transparent;
+        color: #a25f4b;
+        font-size: 20px;
+        line-height: 32px;
+        text-align: center;
+    }
+`;
 
 const TextArea = styled.div`
     width: 560px;
@@ -76,6 +113,7 @@ const ArticleWrap = styled.div`
     width: 1200px;
     margin: auto;
     border: 1px solid #ececed;
+    margin-bottom: 100px;
     img {
         height: 650px;
         width: 1440px;
@@ -83,10 +121,11 @@ const ArticleWrap = styled.div`
     }
 `;
 
-export default function Article() {
+export default function Article(props) {
+    const {img, date, text} = props.article;
     return (
         <ArticleWrap>
-            <img src={require(`../../../images/Post1.jpg`)} alt="Article Image"/>
+            <img src={require(`../../../images/${img}`)} alt="Article Image"/>
             <Main>
                 <Author>
                     <div className='small-text-bold opacity6'>WRITTEN BY</div>
@@ -97,12 +136,10 @@ export default function Article() {
                 </Author>
                 <TextArea>
                     <div className="date small-text-bold opacity6">
-                        NOVEMBER 12, 2018
+                        {date}
                         <div className="deco-line" />
                     </div>
-                    <Text>
-
-                    </Text>
+                    <Text dangerouslySetInnerHTML={{ __html: text }}></Text>
                 </TextArea>
             </Main>
         </ArticleWrap>
