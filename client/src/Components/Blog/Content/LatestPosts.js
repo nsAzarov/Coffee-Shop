@@ -28,7 +28,7 @@ export default function LatestPosts() {
                 <ImageArea>
                     <img src={require(`../../../images/Post1.jpg`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}} alt=""/>
                     <div className="overlay" style={{height: '210px', width: '260px'}}>
-                        <ButtonWhite to='/Article/1' className='btn small-text-bold' text='READ THE FULL STORY'/>
+                        <ButtonWhite to='/Article/1' className='btn' text='READ THE FULL STORY'/>
                     </div>
                 </ImageArea>
                 <Description style={{width: '280px'}}>
@@ -54,7 +54,7 @@ export default function LatestPosts() {
                 <ImageArea>
                     <img src={require(`../../../images/art2.jpg`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}}  alt=""/>
                     <div className="overlay" style={{height: '210px', width: '260px'}}>
-                        <ButtonWhite className='btn small-text-bold' text='READ THE FULL STORY'/>
+                        <ButtonWhite className='btn' text='READ THE FULL STORY'/>
                     </div>
                 </ImageArea>
                 <Description style={{width: '280px'}}>
@@ -67,7 +67,7 @@ export default function LatestPosts() {
                 <ImageArea>
                     <img src={require(`../../../images/art3.jpg`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}}  alt=""/>
                     <div className="overlay" style={{height: '210px', width: '260px'}}>
-                        <ButtonWhite className='btn small-text-bold' text='READ THE FULL STORY'/>
+                        <ButtonWhite className='btn' text='READ THE FULL STORY'/>
                     </div>
                 </ImageArea>
                 <Description style={{width: '280px'}}>
@@ -80,7 +80,7 @@ export default function LatestPosts() {
                 <ImageArea>
                     <img src={require(`../../../images/art1.jpg`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}}  alt=""/>
                     <div className="overlay" style={{height: '210px', width: '260px'}}>
-                        <ButtonWhite className='btn small-text-bold' text='READ THE FULL STORY'/>
+                        <ButtonWhite className='btn' text='READ THE FULL STORY'/>
                     </div>
                 </ImageArea>
                 <Description style={{width: '280px'}}>

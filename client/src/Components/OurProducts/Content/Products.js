@@ -31,9 +31,9 @@ export default function Products() {
                                 <ImageArea>
                                     <img src={require(`../../../images/${prod.img}`)} alt=""/>
                                     {prod.newPrice ? <ButtonWhite className='sale' text='On Sale'/> : null}
-                                    <Link to={`/Product/${prod.productID}`} className="overlay">
-                                        <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                                    </Link>
+                                    <div className="overlay">
+                                        <ButtonWhite to={`/Product/${prod.productID}`} className='btn' text='EXPLORE MUG'/>
+                                    </div>
                                 </ImageArea>
                                 <Title>
                                 {prod.name}

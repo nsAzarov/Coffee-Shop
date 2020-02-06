@@ -50,7 +50,7 @@ const ImageArea = styled.div`
         align-items: flex-end;
         position: absolute;
         top: 0;
-        height: 100%;
+        height: 99%;
         width: 100%;
         opacity: 0;
         transition: background-color .2s linear, opacity .4s;

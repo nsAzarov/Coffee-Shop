@@ -57,7 +57,7 @@ export default function FeaturedPosts() {
                 </Post>
             </PostsWrap>
             <BtnArea>
-                <ButtonBlack className='small-text-bold' text='VIEW ALL ARTICLES'/>
+                <ButtonBlack text='VIEW ALL ARTICLES'/>
             </BtnArea>
         </Wrap>
     )

@@ -7,6 +7,9 @@ const Button = styled(Link)`
     color: #1d1f2e;
     background-color: #fff;
     text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
     letter-spacing: 2px;
     transition: .2s;
     &:hover {

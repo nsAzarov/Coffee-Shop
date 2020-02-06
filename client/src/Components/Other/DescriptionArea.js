@@ -14,7 +14,7 @@ export const DescriptionArea = styled.div`
     }
     p {
         color: rgba(29, 31, 46, 0.7);
-        margin-bottom: 15px;
+        margin-bottom: 30px;
         line-height: 28px;
     }
 `;

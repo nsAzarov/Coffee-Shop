@@ -84,7 +84,7 @@ export default function ContactForm() {
                         <label for='message'>YOUR MESSAGE</label>
                         <textarea placeholder='Hi! I would like to ask something about mugs.' name='message'></textarea>
                     </Form>
-                    <ButtonBlack className='small-text-bold' text='START SHOPPING'/>
+                    <ButtonBlack text='START SHOPPING'/>
                 </LeftArea>
                 <RightArea>
                     <div className='small-text-bold opacity6'>ADDRESS</div>

@@ -3,6 +3,14 @@ const Schema = mongoose.Schema;
 
 const AuthorSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
+    authorID: {
+        type: Number,
+        required: true
+    },
+    articlesID: {
+        type: [Number],
+        required: true
+    },
     img: {
         type: String,
         required: true

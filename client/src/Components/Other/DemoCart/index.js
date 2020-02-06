@@ -74,7 +74,7 @@ export default function DemoCart() {
                         <span>Subtotal</span>
                         <span>$ 99.00 USD</span>
                     </div>
-                    <ButtonWhite className='small-text-bold' text='CONTINUE TO CHECKOUT' style={{width: '100%'}}/>
+                    <ButtonWhite text='CONTINUE TO CHECKOUT' style={{width: '100%'}}/>
                 </CartFooter>
             </CartContainer>
         </CartContainerWrapper>
