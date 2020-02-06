@@ -86,7 +86,7 @@ const InfoSection = styled.div`
 `;
 
 export default function ProductInfo(props) {
-    const {img, name, description, details, oldPrice, newPrice, length, height, width, weight} = props.data.product;
+    const {img, name, description, details, oldPrice, newPrice, length, height, width, weight} = props.data;
     return (
         <Wrap>
             <InfoSection>
