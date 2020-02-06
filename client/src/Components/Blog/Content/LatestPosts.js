@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import gql from 'graphql-tag';
+import {Query} from 'react-apollo';
+
 import {Description} from '../../Other/Description';
 import {BlogHeader} from './BlogHeader';
 import {ImageArea} from '../../Other/Products';
@@ -20,75 +23,49 @@ const Posts = styled.div`
     width: 600px;
 `;
 
+const GET_ARTICLES_QUERY = gql`
+    query GetArticles {
+        articles {
+            articleID
+            authorID
+            img
+            title
+            description
+            text
+            date
+        }
+    }
+`;
+
 export default function LatestPosts() {
     return (
         <Posts>
             <BlogHeader>Latest Posts</BlogHeader>
-            <Post>
-                <ImageArea>
-                    <img src={require(`../../../images/Post1.jpg`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}} alt=""/>
-                    <div className="overlay" style={{height: '210px', width: '260px'}}>
-                        <ButtonWhite to='/Article/1' className='btn' text='READ THE FULL STORY'/>
-                    </div>
-                </ImageArea>
-                <Description style={{width: '280px'}}>
-                    <div className="title">Will drinking coffee prolong your life?</div>
-                    <p>Aliquid aperiam accusantium quam ipsam. Velit rerum veniam optio illo dolor delectus et recusandae. Impedit aut cupiditate. Illum eveniet officiis ullam ipsam sed iste eius. Nam at quae ducimus dicta delectus</p>
-                    <div className="date small-text-bold">OCTOBER 9, 2018</div>
-                </Description>
-            </Post>
-            <Post>
-                <ImageArea>
-                    <img src={require(`../../../images/Post2.jpg`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}}  alt=""/>
-                    <div className="overlay" style={{height: '210px', width: '260px'}}>
-                        <ButtonWhite className='btn small-text-bold' text='READ THE FULL STORY'/>
-                    </div>
-                </ImageArea>
-                <Description style={{width: '280px'}}>
-                    <div className="title">More coffee, lower death risk?</div>
-                    <p>Eveniet itaque aperiam qui officia in ducimus. Voluptas culpa ut eligendi in. Minima est dolores dolore aut et et alias p</p>
-                    <div className="date small-text-bold">OCTOBER 9, 2018</div>
-                </Description>
-            </Post>
-            <Post>
-                <ImageArea>
-                    <img src={require(`../../../images/art2.jpg`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}}  alt=""/>
-                    <div className="overlay" style={{height: '210px', width: '260px'}}>
-                        <ButtonWhite className='btn' text='READ THE FULL STORY'/>
-                    </div>
-                </ImageArea>
-                <Description style={{width: '280px'}}>
-                    <div className="title">How long does a cup of coffee keep you awake?</div>
-                    <p>It is a paradisematic country, in which roasted parts. Vel qui et ad voluptatem.</p>
-                    <div className="date small-text-bold">OCTOBER 9, 2018</div>
-                </Description>
-            </Post>
-            <Post>
-                <ImageArea>
-                    <img src={require(`../../../images/art3.jpg`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}}  alt=""/>
-                    <div className="overlay" style={{height: '210px', width: '260px'}}>
-                        <ButtonWhite className='btn' text='READ THE FULL STORY'/>
-                    </div>
-                </ImageArea>
-                <Description style={{width: '280px'}}>
-                    <div className="title">Recent research suggests that heavy coffee drinkers may reap health benefits.</div>
-                    <p>It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                    <div className="date small-text-bold">OCTOBER 9, 2018</div>
-                </Description>
-            </Post>
-            <Post>
-                <ImageArea>
-                    <img src={require(`../../../images/art1.jpg`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}}  alt=""/>
-                    <div className="overlay" style={{height: '210px', width: '260px'}}>
-                        <ButtonWhite className='btn' text='READ THE FULL STORY'/>
-                    </div>
-                </ImageArea>
-                <Description style={{width: '280px'}}>
-                    <div className="title">Health Check: why do I get a headache when I haven’t had my coffee?</div>
-                    <p>It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                    <div className="date small-text-bold">OCTOBER 9, 2018</div>
-                </Description>
-            </Post>
+            <Query query={GET_ARTICLES_QUERY}>
+                {({ loading, error, data }) => {
+                    if (loading) return null;
+                    if (error) console.log(error);
+                    console.log(data);
+                    return data.articles.map((article, i) => {
+                        return <Post key={i}>
+                            <ImageArea>
+                                <img src={require(`../../../images/${article.img}`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}} alt=""/>
+                                <div className="overlay" style={{height: '210px', width: '260px'}}>
+                                    <ButtonWhite to={{
+                                        pathname: `/Article/${article.articleID}`,
+                                        state: article
+                                    }} className='btn' text='READ THE FULL STORY'/>
+                                </div>
+                            </ImageArea>
+                            <Description style={{width: '280px'}}>
+                                <div className="title">Will drinking coffee prolong your life?</div>
+                                <p>Aliquid aperiam accusantium quam ipsam. Velit rerum veniam optio illo dolor delectus et recusandae. Impedit aut cupiditate. Illum eveniet officiis ullam ipsam sed iste eius. Nam at quae ducimus dicta delectus</p>
+                                <div className="date small-text-bold">OCTOBER 9, 2018</div>
+                            </Description>
+                        </Post>
+                    })
+                }}
+            </Query>
         </Posts>
     )
 }

@@ -5,11 +5,10 @@ import { Link } from 'react-router-dom';
 
 const Authors = styled.div``;
 
-const Item = styled(Link)`
+const Item = styled.li`
     display: flex;
     align-items: center;
     border-left: 2px solid rgba(162, 95, 75, 0.2);
-    text-decoration: none;
     padding: 8px 0 8px 20px;
     margin: 5px 0;
     line-height: 28px;
