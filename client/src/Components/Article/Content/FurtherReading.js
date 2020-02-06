@@ -37,9 +37,9 @@ const PostsWrap = styled.div`
 export default function FeaturedPosts() {
     return (
         <Wrap>
-            <Headline style={{color: 'black'}} className='small-text-bold' text='FEATURED POSTS' />
+            <Headline style={{color: 'black'}} className='small-text-bold' text='FEATURED POSTS'  data-aos="fade-up"/>
             <PostsWrap>
-                <Post>
+                <Post data-aos="fade-up">
                     <img src={require(`../../../images/Post1.jpg`)} alt=""/>
                     <Description>
                         <div className="title">Will drinking coffee prolong your life?</div>
@@ -47,7 +47,7 @@ export default function FeaturedPosts() {
                         <div className="date small-text-bold">OCTOBER 9, 2018</div>
                     </Description>
                 </Post>
-                <Post>
+                <Post data-aos="fade-up">
                     <img src={require(`../../../images/art2.jpg`)} alt=""/>
                     <Description>
                         <div className="title"> How long does a cup of coffee keep you awake?</div>
@@ -56,7 +56,7 @@ export default function FeaturedPosts() {
                     </Description>
                 </Post>
             </PostsWrap>
-            <BtnArea>
+            <BtnArea data-aos="fade-up">
                 <ButtonBlack text='VIEW ALL ARTICLES'/>
             </BtnArea>
         </Wrap>

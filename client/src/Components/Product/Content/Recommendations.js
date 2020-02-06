@@ -7,7 +7,7 @@ import ButtonWhite from '../../Other/ButtonWhite';
 export default function Recommendations() {
     return (
         <MoreProductsWrap>
-            <Headline style={{color: 'black'}} className='small-text-bold' text='YOU MIGHT ALSO LIKE THESE' />
+            <Headline style={{color: 'black'}} className='small-text-bold' text='YOU MIGHT ALSO LIKE THESE' data-aos="fade-up"/>
             <ProductsCollection>
                 <ProductSmall data-aos="fade-up">
                     <ImageArea>

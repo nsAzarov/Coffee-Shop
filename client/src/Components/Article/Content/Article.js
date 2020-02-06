@@ -127,7 +127,7 @@ export default function Article(props) {
         <ArticleWrap>
             <img src={require(`../../../images/${img}`)} alt="Article Image"/>
             <Main>
-                <Author>
+                <Author data-aos="fade-up">
                     <div className='small-text-bold opacity6'>WRITTEN BY</div>
                     <img src={require(`../../../images/photo1.jpg`)} alt="Author photo"/>
                     <div className="name small-text-bold opacity6">Fred Gleason</div>
