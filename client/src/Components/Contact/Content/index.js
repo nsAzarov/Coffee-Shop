@@ -20,7 +20,7 @@ export default function index() {
             </WideWrap>
             <OurOffices />
             <ContactForm />
-            <iframe title='map' src="https://yandex.ru/map-widget/v1/?um=constructor%3A6609e0843b3351b00119782ad7538deee1ba873d921040f4a3eddd75899baead&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+            <iframe title='map' src="https://yandex.ru/map-widget/v1/?um=constructor%3A6609e0843b3351b00119782ad7538deee1ba873d921040f4a3eddd75899baead&amp;source=constructor" width="100%" height="400" frameBorder="0"></iframe>
             <Directory />
         </Content>
     )

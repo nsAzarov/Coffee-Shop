@@ -95,6 +95,7 @@ export default function ProductInfo(props) {
                     <h1>{name}</h1>
                     <p>{description}</p>
                     <form>
+                        {newPrice ? null : null}
                         <div className="price">$ {oldPrice}.00 USD</div>
                         <label className='small-text-bold opacity6'>QUANTITY</label>
                         <input name='quantity' className='small-text-bold' type='number' value='1' onChange={() => null}/>

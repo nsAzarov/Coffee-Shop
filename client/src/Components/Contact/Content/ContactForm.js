@@ -94,11 +94,11 @@ export default function ContactForm() {
                     <Headline style={{color: 'black'}} className='small-text-bold' text='CONTACT FORM' />
                     <div className='contact-form-headline'>Drop us your message and I'll get back to you as soon as possible.</div>
                     <Form className='small-text-bold opacity6'>
-                        <label for='name'>NAME</label>
+                        <label htmlFor='name'>NAME</label>
                         <input placeholder='James Coffee' name='name'></input>
-                        <label for='email'>EMAIL ADDRESS</label>
+                        <label htmlFor='email'>EMAIL ADDRESS</label>
                         <input placeholder='customer@coffeestyle.io' name='email'></input>
-                        <label for='message'>YOUR MESSAGE</label>
+                        <label htmlFor='message'>YOUR MESSAGE</label>
                         <textarea placeholder='Hi! I would like to ask something about mugs.' name='message'></textarea>
                     </Form>
                     <ButtonBlack onClick={() => {alert('SEND MESSAGE')}}>SEND MESSAGE</ButtonBlack>
