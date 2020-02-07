@@ -122,16 +122,16 @@ const ArticleWrap = styled.div`
 `;
 
 export default function Article(props) {
-    const {img, date, text} = props.article;
+    const {img, date, text, author} = props.article;
     return (
         <ArticleWrap>
             <img src={require(`../../../images/${img}`)} alt="Article Image"/>
             <Main>
                 <Author data-aos="fade-up">
                     <div className='small-text-bold opacity6'>WRITTEN BY</div>
-                    <img src={require(`../../../images/photo1.jpg`)} alt="Author photo"/>
-                    <div className="name small-text-bold opacity6">Fred Gleason</div>
-                    <p>Tempora vel voluptate. Aut dolorum officia qui officia nostrum porro. Voluptas ut id quo.</p>
+                    <img src={require(`../../../images/${author.img}`)} alt="Author photo"/>
+                    <div className="name small-text-bold opacity6">{author.name}</div>
+                    <p>{author.presentation}</p>
                     <Link to='/Blog'>All author's posts</Link>
                 </Author>
                 <TextArea>

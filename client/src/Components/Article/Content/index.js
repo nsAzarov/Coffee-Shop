@@ -15,6 +15,12 @@ const GET_ARTICLE_QUERY = gql`
             description
             text
             date
+            authorID
+            author {
+                img
+                name
+                presentation
+            }
         }
     }
 `;
@@ -37,7 +43,12 @@ export default function index(props) {
                             description: '',
                             img: 'default.jpg', 
                             text: '<h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla vel sapiente necessitatibus voluptate aspernatur asperiores quaerat temporibus fuga dolor nisi est ut iusto, earum eligendi rerum saepe quos aut velit!</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla vel sapiente necessitatibus voluptate aspernatur asperiores quaerat temporibus fuga dolor nisi est ut iusto, earum eligendi rerum saepe quos aut velit!</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla vel sapiente necessitatibus voluptate aspernatur asperiores quaerat temporibus fuga dolor nisi est ut iusto, earum eligendi rerum saepe quos aut velit!</p><blockquote>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla vel sapiente necessitatibus voluptate aspernatur asperiores quaerat temporibus fuga dolor nisi est ut iustoq</blockquote>',
-                            date: ''
+                            date: '',
+                            author: {
+                                img: 'default.jpg', 
+                                name: '',
+                                description: ''
+                            }
                         }
                         return <>
                             <Head article={article}/>

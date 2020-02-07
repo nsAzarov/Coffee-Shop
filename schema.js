@@ -6,6 +6,10 @@ const {
     GraphQLSchema
 } = require('graphql');
 
+const Product = require('./models/Product');
+const Article = require('./models/Article');
+const Author = require('./models/Author');
+
 const ProductType = new GraphQLObjectType({
     name: 'Product',
     fields: () => ({
@@ -24,6 +28,18 @@ const ProductType = new GraphQLObjectType({
     })
 });
 
+const AuthorType = new GraphQLObjectType({
+    name: 'Author',
+    fields: () => ({
+        _id: { type: GraphQLString },
+        authorID: { type: GraphQLInt },
+        articlesID: { type: GraphQLList(GraphQLInt) },
+        img: { type: GraphQLString },
+        name: { type: GraphQLString },
+        presentation: { type: GraphQLString }
+    })
+});
+
 const ArticleType = new GraphQLObjectType({
     name: 'Article',
     fields: () => ({
@@ -34,12 +50,15 @@ const ArticleType = new GraphQLObjectType({
         title: { type: GraphQLString },
         description: { type: GraphQLString },
         text: { type: GraphQLString },
-        date: { type: GraphQLString }
+        date: { type: GraphQLString },
+        author: {
+            type: AuthorType,
+            resolve(parent, args) {
+                return Author.findOne({ authorID: parent.authorID })
+            }
+        }
     })
 });
-
-const Product = require('./models/Product');
-const Article = require('./models/Article');
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',

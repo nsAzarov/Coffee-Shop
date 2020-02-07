@@ -19,16 +19,8 @@ const AuthorSchema = new Schema({
         type: String,
         required: true
     },
-    specialization: {
-        type: String,
-        required: true
-    },
     presentation: {
         type: String,
-        required: true
-    },
-    date: {
-        type: Date,
         required: true
     }
 }, {collection: 'Authors'});

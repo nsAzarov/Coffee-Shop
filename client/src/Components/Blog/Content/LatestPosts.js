@@ -27,12 +27,17 @@ const GET_ARTICLES_QUERY = gql`
     query GetArticles {
         articles {
             articleID
-            authorID
             img
             title
             description
             text
             date
+            authorID
+            author {
+                img
+                name
+                presentation
+            }
         }
     }
 `;
@@ -45,7 +50,6 @@ export default function LatestPosts() {
                 {({ loading, error, data }) => {
                     if (loading) return null;
                     if (error) console.log(error);
-                    console.log(data);
                     return data.articles.map((article, i) => {
                         return <Post key={i}>
                             <ImageArea>
