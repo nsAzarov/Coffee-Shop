@@ -60,7 +60,7 @@ export default function Featured() {
                     <ImageArea>
                         <img src={require(`../../../images/mugPink.jpg`)} alt=""/>
                         <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                            <ButtonWhite to='/' className='btn' text='EXPLORE MUG'/>
                         </div>
                     </ImageArea>
                     <Title>
@@ -76,7 +76,7 @@ export default function Featured() {
                         <img src={require(`../../../images/mugBeige.jpg`)} alt=""/>
                         <ButtonWhite className='sale' text='On Sale'/>
                         <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                            <ButtonWhite to='/' className='btn' text='EXPLORE MUG'/>
                         </div>
                     </ImageArea>
                     <Title>

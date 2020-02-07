@@ -30,7 +30,7 @@ export default function Products() {
                             return <ProductSmall key={i} data-aos="fade-up">
                                 <ImageArea>
                                     <img src={require(`../../../images/${prod.img}`)} alt=""/>
-                                    {prod.newPrice ? <ButtonWhite className='sale' text='On Sale'/> : null}
+                                    {prod.newPrice ? <ButtonWhite to='/' className='sale' text='On Sale'/> : null}
                                     <div className="overlay">
                                         <ButtonWhite to={`/Product/${prod.productID}`} className='btn' text='EXPLORE MUG'/>
                                     </div>

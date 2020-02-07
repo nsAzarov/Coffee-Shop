@@ -3,7 +3,24 @@ import styled from 'styled-components';
 
 import {Wrap} from '../../Other/ContentWrap';
 import {Headline} from '../../Other/Headline';
-import ButtonBlack from '../../Other/ButtonBlack';
+
+const ButtonBlack = styled.button`
+    cursor: pointer;
+    padding: 18px 24px;
+    background-color: #1d1f2e;
+    box-shadow: 0 3px 8px 0 rgba(29, 31, 46, 0.15);
+    opacity: 0.96;
+    color: #fff !important;
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: .2s;
+    &:hover {
+        background-color: #2f3247;
+    }
+`;
 
 const RightArea = styled.div`
     .headline {
@@ -84,7 +101,7 @@ export default function ContactForm() {
                         <label for='message'>YOUR MESSAGE</label>
                         <textarea placeholder='Hi! I would like to ask something about mugs.' name='message'></textarea>
                     </Form>
-                    <ButtonBlack text='START SHOPPING'/>
+                    <ButtonBlack onClick={() => {alert('SEND MESSAGE')}}>SEND MESSAGE</ButtonBlack>
                 </LeftArea>
                 <RightArea>
                     <div className='small-text-bold opacity6'>ADDRESS</div>

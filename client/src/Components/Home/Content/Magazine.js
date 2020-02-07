@@ -63,7 +63,7 @@ export default function Magazine() {
                         <div className='small-text-bold' style={{opacity: '0.6'}}>PREMIUM OFFER</div>
                         <div className='header'>Get our Coffee Magazine</div>
                         <p>The most versatile furniture system ever created. Designed to fit your life.</p>
-                        <Link to='/'><ButtonBlack text='START SHOPPING'/></Link>
+                        <div><ButtonBlack to='/OurProducts' text='START SHOPPING'/></div>
                     </DescriptionArea>
                 </Content>
             </MagazineWrap>

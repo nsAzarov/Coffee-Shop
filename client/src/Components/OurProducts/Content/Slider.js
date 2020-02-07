@@ -70,28 +70,28 @@ export default function Slider() {
                     <ImageArea style={{width: '460px', padding: '0 10px'}}>
                         <img src={require(`../../../images/slide1.jpg`)} style={{height: '380px', width: '460px'}}alt=""/>
                         <div className="overlay" style={{width: '460px'}}>
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                            <ButtonWhite to='/Article/1' className='btn' text='READ THE FULL STORY'/>
                         </div>
                     </ImageArea>
                     <DescriptionArea>
-                        <div className='small-text-bold' style={{opacity: '0.6'}}>NEW STORE OPENED</div>
+                        <div className='small-text-bold opacity6'>NEW STORE OPENED</div>
                         <div className='header'>We're in London</div>
                         <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.</p>
-                        <Link to='/'><ButtonBlack text='EXPLORE OUR OFFICES'/></Link>
+                        <div><ButtonBlack to='/Article/1' text='READ THE FULL STORY'/></div>
                     </DescriptionArea>
                 </Slide>
                 <Slide>
                     <ImageArea style={{width: '460px', padding: '0 10px'}}>
                         <img src={require(`../../../images/art1.jpg`)} style={{height: '380px', width: '460px'}}alt=""/>
                         <div className="overlay" style={{width: '460px'}}>
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                            <ButtonWhite to='/Article/1' className='btn' text='READ THE FULL STORY'/>
                         </div>
                     </ImageArea>
                     <DescriptionArea>
-                        <div className='small-text-bold' style={{opacity: '0.6'}}>NEW ARTICLE IS LIVE</div>
+                        <div className='small-text-bold opacity6'>NEW ARTICLE IS LIVE</div>
                         <div className='header'>Health Check: why do I get a headache when I haven’t had my coffee?</div>
                         <p>It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <Link to='/'><ButtonBlack text='READ THE FULL STORY'/></Link>
+                        <div><ButtonBlack to='/Article/1' text='READ THE FULL STORY'/></div>
                     </DescriptionArea>
                 </Slide>
             </SliderMask>

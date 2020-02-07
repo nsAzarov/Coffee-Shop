@@ -1,7 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import ButtonWhite from '../ButtonWhite';
 import {Headline} from '../Headline';
+
+const ButtonWhite = styled.button`
+    padding: 18px 24px;
+    color: #1d1f2e;
+    background-color: #fff;
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: .2s;
+    &:hover {
+        background-color: #f5f5f5;
+    }
+`;
 
 const SubscribeForm = styled.div`
     input {
@@ -77,7 +91,7 @@ export default function index() {
                     <SecondHeadline>Coffee Updates</SecondHeadline>
                     <SubscribeForm>
                         <input type="text" className="small-text-bold" placeholder="customer@coffeestyle.io"/>
-                        <ButtonWhite className='middle-text' text='SUBSCRIBE'/>
+                        <ButtonWhite onClick={() => alert('SUBSCRIBE')} className='middle-text'>SUBSCRIBE</ButtonWhite>
                     </SubscribeForm>
                 </Form>
             </SubscribeWrap>

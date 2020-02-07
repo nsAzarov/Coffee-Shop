@@ -53,7 +53,7 @@ export default function HeaderSection() {
                     <FirstHeadline className='small-text-bold'>BEST PLACE TO BUY DESIGN</FirstHeadline>
                     <SecondHeadline>Coffee Mugs</SecondHeadline>
                     <Description className='large-text'>The most versatile furniture system ever created. Designed to fit your life, made to move and grow.</Description>
-                    <ButtonWhite text='EXPLORE OUR PRODUCTIONS' />
+                    <ButtonWhite to='/OurProducts' text='EXPLORE OUR PRODUCTIONS' />
                 </Content>
             </Wrap>
         </Header>

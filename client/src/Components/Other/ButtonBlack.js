@@ -21,7 +21,7 @@ const Button = styled(Link)`
 
 export default function ButtonWhite(props) {
     return (
-        <Button to={props.to ? props.to : '/'} onClick={() => props.onClick} className={props.className}>
+        <Button to={props.to ? props.to : '/'} className={props.className}>
             {props.text}
         </Button>
     )

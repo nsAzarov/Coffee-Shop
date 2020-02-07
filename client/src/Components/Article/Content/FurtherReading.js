@@ -57,7 +57,7 @@ export default function FeaturedPosts() {
                 </Post>
             </PostsWrap>
             <BtnArea data-aos="fade-up">
-                <ButtonBlack text='VIEW ALL ARTICLES'/>
+                <ButtonBlack to='/Blog' text='VIEW ALL ARTICLES'/>
             </BtnArea>
         </Wrap>
     )
