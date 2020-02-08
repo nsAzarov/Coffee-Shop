@@ -24,9 +24,25 @@ justify-content: center;
     }
     form {
         margin: 30px 0;
-        .price {
-            font-size: 30px;
-            line-height: 42px;
+        .price-area {
+            .price {
+                display: inline-block;
+            }
+            .new {
+                display: inline-block;
+                margin-right: 10px;
+                color: #a25f4b;
+                font-size: 30px;
+                line-height: 42px;
+            }
+            .old {
+                color: rgba(29, 31, 46, 0.4);
+                text-decoration: line-through;
+            }
+            .one {
+                font-size: 30px;
+                line-height: 42px;
+            }
         }
         label {
             display: block;
@@ -95,8 +111,13 @@ export default function ProductInfo(props) {
                     <h1>{name}</h1>
                     <p>{description}</p>
                     <form>
-                        {newPrice ? null : null}
-                        <div className="price">$ {oldPrice}.00 USD</div>
+                        <div className="price-area">
+                            {newPrice ? <>
+                                <div className="new price">${newPrice}.00</div>{newPrice ? null : null}
+                                <div className="old price">$ {oldPrice}.00 USD</div>
+                            </> :
+                            <div className="one price">$ {oldPrice}.00 USD</div>}
+                        </div>
                         <label className='small-text-bold opacity6'>QUANTITY</label>
                         <input name='quantity' className='small-text-bold' type='number' value='1' onChange={() => null}/>
                         <ButtonBlack text='ADD TO CART' style={{display: 'inline-block'}}/>
