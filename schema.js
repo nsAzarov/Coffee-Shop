@@ -51,6 +51,7 @@ const ArticleType = new GraphQLObjectType({
         description: { type: GraphQLString },
         text: { type: GraphQLString },
         date: { type: GraphQLString },
+        category: { type: GraphQLString },
         author: {
             type: AuthorType,
             resolve(parent, args) {

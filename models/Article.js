@@ -30,6 +30,10 @@ const ArticleSchema = new Schema({
     date: {
         type: String,
         required: true
+    },
+    category: {
+        type: String,
+        required: true
     }
 }, {collection: 'Articles'});
 

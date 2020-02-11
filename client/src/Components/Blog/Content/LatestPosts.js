@@ -31,6 +31,10 @@ const GET_ARTICLES_QUERY = gql`
             title
             description
             date
+            category
+        }
+        filters @client {
+            category
         }
     }
 `;
@@ -41,6 +45,7 @@ export default function LatestPosts() {
         <Posts>
             <BlogHeader>Latest Posts</BlogHeader>
             {loading ? null : data.articles.map((article, i) => {
+                if (!data.filters.category) {
                 return <Post key={i}>
                     <ImageArea>
                         <img src={require(`../../../images/${article.img}`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}} alt=""/>
@@ -56,7 +61,23 @@ export default function LatestPosts() {
                         <p>{article.description}</p>
                         <div className="date small-text-bold">{article.date}</div>
                     </Description>
-                </Post>
+                </Post>} else if (article.category === data.filters.category) {
+                    return <Post key={i}>
+                    <ImageArea>
+                        <img src={require(`../../../images/${article.img}`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}} alt=""/>
+                        <div className="overlay" style={{height: '210px', width: '260px'}}>
+                            <ButtonWhite to={{
+                                pathname: `/Article/${article.articleID}`,
+                                state: article
+                            }} className='btn' text='READ THE FULL STORY'/>
+                        </div>
+                    </ImageArea>
+                    <Description style={{width: '280px'}}>
+                        <div className="title">{article.title}</div>
+                        <p>{article.description}</p>
+                        <div className="date small-text-bold">{article.date}</div>
+                    </Description>
+                </Post>}
             })}
         </Posts>
     )

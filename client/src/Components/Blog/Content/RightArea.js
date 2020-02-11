@@ -1,5 +1,8 @@
 import React from 'react';
+import gql from 'graphql-tag';
 import styled from 'styled-components';
+import { useMutation } from '@apollo/react-hooks';
+
 import { BlogHeader } from './BlogHeader';
 import { Link } from 'react-router-dom';
 
@@ -65,7 +68,14 @@ const Container = styled.div`
     width: 300px;
 `;
 
+const SET_CATEGORY_FILTER = gql`
+    mutation SetCategoryFilter($category: String) {
+        setCategoryFilter(category: $category) @client
+    }
+`;
+
 export default function RightArea() {
+    const [setCategoryFilter] = useMutation(SET_CATEGORY_FILTER);
     return (
         <Container>
             <AboutUs>
@@ -77,10 +87,10 @@ export default function RightArea() {
             <Categories>
                 <BlogHeader>Categories</BlogHeader>
                 <List>
-                    <Item>Barista</Item>
-                    <Item>Coffee</Item>
-                    <Item>LifeStyle</Item>
-                    <Item>Mugs</Item>
+                    <Item onClick={() => setCategoryFilter({ variables: { category: 'Barista' } })}>Barista</Item>
+                    <Item onClick={() => setCategoryFilter({ variables: { category: 'Coffee' } })}>Coffee</Item>
+                    <Item onClick={() => setCategoryFilter({ variables: { category: 'LifeStyle' } })}>LifeStyle</Item>
+                    <Item onClick={() => setCategoryFilter({ variables: { category: 'Mugs' } })}>Mugs</Item>
                 </List>
             </Categories>
             <Authors>

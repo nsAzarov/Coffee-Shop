@@ -8,11 +8,11 @@ const client = new ApolloClient({
     link: new HttpLink({ uri: '/graphql' }),
     resolvers: {
         Mutation: {
-            setLanguageFilter: (_, { language }, { cache }) => {
+            setCategoryFilter: (_, { category }, { cache }) => {
                 const data = {
                     filters: {
-                        language,
-                        __typename: "Filters"
+                        category,
+                        __typename: "Categories"
                     }
                 };
                 cache.writeData({ data });
@@ -21,6 +21,7 @@ const client = new ApolloClient({
         }
     }
 });
+client.writeData({ data: { filters: {category: ''} } })
 
 export default function App() {
     return (
