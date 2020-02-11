@@ -32,6 +32,11 @@ const GET_ARTICLES_QUERY = gql`
             description
             date
             category
+            author {
+                img
+                name
+                presentation
+            }
         }
         filters @client {
             category
@@ -45,6 +50,7 @@ export default function LatestPosts() {
         <Posts>
             <BlogHeader>Latest Posts</BlogHeader>
             {loading ? null : data.articles.map((article, i) => {
+                
                 if (!data.filters.category) {
                 return <Post key={i}>
                     <ImageArea>
@@ -61,7 +67,9 @@ export default function LatestPosts() {
                         <p>{article.description}</p>
                         <div className="date small-text-bold">{article.date}</div>
                     </Description>
-                </Post>} else if (article.category === data.filters.category) {
+                </Post>} 
+                
+                else if (article.category === data.filters.category) {
                     return <Post key={i}>
                     <ImageArea>
                         <img src={require(`../../../images/${article.img}`)} style={{height: '210px', width: '260px', margin: '0 40px 25px 0'}} alt=""/>
