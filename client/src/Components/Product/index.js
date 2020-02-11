@@ -9,7 +9,7 @@ export default function index(props) {
     return (
         <>
             <TopSection />
-            <ContentSection ID={props.match.params.id}/>
+            <ContentSection ID={props.match.params.id} product={props.location.state}/>
             <SubscribeSection />
             <FooterSection />
         </>

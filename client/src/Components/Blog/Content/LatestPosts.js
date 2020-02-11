@@ -30,14 +30,7 @@ const GET_ARTICLES_QUERY = gql`
             img
             title
             description
-            text
             date
-            authorID
-            author {
-                img
-                name
-                presentation
-            }
         }
     }
 `;
@@ -59,9 +52,9 @@ export default function LatestPosts() {
                         </div>
                     </ImageArea>
                     <Description style={{width: '280px'}}>
-                        <div className="title">Will drinking coffee prolong your life?</div>
-                        <p>Aliquid aperiam accusantium quam ipsam. Velit rerum veniam optio illo dolor delectus et recusandae. Impedit aut cupiditate. Illum eveniet officiis ullam ipsam sed iste eius. Nam at quae ducimus dicta delectus</p>
-                        <div className="date small-text-bold">OCTOBER 9, 2018</div>
+                        <div className="title">{article.title}</div>
+                        <p>{article.description}</p>
+                        <div className="date small-text-bold">{article.date}</div>
                     </Description>
                 </Post>
             })}

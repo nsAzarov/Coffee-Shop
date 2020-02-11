@@ -27,29 +27,25 @@ const GET_ARTICLE_QUERY = gql`
 
 export default function Main(props) {
     const { loading, data } = useQuery(GET_ARTICLE_QUERY, { variables: {ID: parseInt(props.ID)} });
-    const article = {
-        title: '', description: '', img: 'default.jpg', 
-        text: '<h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla vel sapiente necessitatibus voluptate aspernatur asperiores quaerat temporibus fuga dolor nisi est ut iusto, earum eligendi rerum saepe quos aut velit!</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla vel sapiente necessitatibus voluptate aspernatur asperiores quaerat temporibus fuga dolor nisi est ut iusto, earum eligendi rerum saepe quos aut velit!</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla vel sapiente necessitatibus voluptate aspernatur asperiores quaerat temporibus fuga dolor nisi est ut iusto, earum eligendi rerum saepe quos aut velit!</p><blockquote>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla vel sapiente necessitatibus voluptate aspernatur asperiores quaerat temporibus fuga dolor nisi est ut iustoq</blockquote>',
-        date: '', author: {img: 'default.jpg', name: '',description: ''}
-    }
+    const defaultArticle = { title: '', description: '', img: 'default.jpg', text: '', date: '', author: {img: 'default.jpg', name: '',description: ''} }
     return (
         <Content>
-            {props.article ? 
-            <>
-                <Head article={props.article}/>
-                <Article article={props.article}/>
-            </>
-            :
-            loading ? <>
-                    <Head article={article}/>
-                    <Article article={article}/>
-                </> 
-                : 
+            {loading ?
+                props.article ? 
                 <>
-                    <Head article={data.article}/>
-                    <Article article={data.article}/>
+                    <Head article={props.article}/>
+                    <Article article={props.article}/>
                 </>
-            }
+                :
+                <>
+                    <Head article={defaultArticle}/>
+                    <Article article={defaultArticle}/>
+                </> 
+            :
+            <>
+                <Head article={data.article}/>
+                <Article article={data.article}/>
+            </>}
             <FurtherReading />
         </Content>
     )
