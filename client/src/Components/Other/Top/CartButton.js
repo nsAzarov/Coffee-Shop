@@ -23,18 +23,17 @@ const CartIcon = styled.div`
 `;
 
 const Quantity = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 18px;
-    min-width: 18px;
+    display: inline-block;
     margin-left: 8px;
+    padding: 0 6px;
     border-radius: 9px;
-    background-color: black;
-    color: white;
     font-size: 11px;
     line-height: 18px;
     font-weight: 700;
+    text-align: center;
+    height: auto;
+    background-color: #1d1f2e;
+    color: #fff;
 `;
 
 export default function CartButton() {

@@ -1,4 +1,6 @@
 import React from 'react';
+import gql from 'graphql-tag';
+import {useQuery} from '@apollo/react-hooks';
 import styled from 'styled-components';
 
 import {Headline} from '../../Other/Headline';
@@ -50,30 +52,38 @@ const ArticlesSection = styled.div`
     width: 100%;
 `;
 
+const GET_ARTICLES_QUERY = gql`
+    query GetArticles($first: Int!) {
+        n_articles(first: $first) {
+            articleID
+            img
+            title
+            description
+            date
+            author {
+                img
+                name
+                presentation
+            }
+        }
+    }
+`;
+
 export default function Articles() {
+    const { loading, data } = useQuery(GET_ARTICLES_QUERY, { variables: {first: 3} });
     return (
         <ArticlesSection data-aos="fade-up">
             <Wrap>
                 <Headline style={{color: 'black'}} className='small-text-bold' text='BEHIND THE MUGS, LIFESTYLE STORIES'/>
                 <ArticlesWrap>
-                    <Article data-aos="fade-up">
-                        <img src={require(`../../../images/art1.jpg`)} alt=""/>
-                        <div className="title">Health Check: why do I get a headache when I haven’t had my coffee?</div>
-                        <p>It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <div className="date small-text-bold">OCTOBER 9, 2018</div>
+                {loading ? null : data.n_articles.map((article, i) => {
+                    return <Article key={i} data-aos="fade-up">
+                        <img src={require(`../../../images/${article.img}`)} alt=""/>
+                        <div className="title">{article.title}</div>
+                        <p>{article.description}</p>
+                        <div className="date small-text-bold">{article.date}</div>
                     </Article>
-                    <Article data-aos="fade-up">
-                        <img src={require(`../../../images/art2.jpg`)} alt=""/>
-                        <div className="title"> How long does a cup of coffee keep you awake?</div>
-                        <p>It is a paradisematic country, in which roasted parts. Vel qui et ad voluptatem.</p>
-                        <div className="date small-text-bold">OCTOBER 9, 2018</div>
-                    </Article>
-                    <Article data-aos="fade-up">
-                        <img src={require(`../../../images/art3.jpg`)} alt=""/>
-                        <div className="title">Recent research suggests that heavy coffee drinkers may reap health benefits. </div>
-                        <p>It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <div className="date small-text-bold">OCTOBER 9, 2018</div>
-                    </Article>
+                })}
                 </ArticlesWrap>
             </Wrap>
         </ArticlesSection>

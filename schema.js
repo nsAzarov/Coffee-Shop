@@ -94,6 +94,15 @@ const RootQuery = new GraphQLObjectType({
                 return Article.find({})
             }
         },
+        n_articles: {
+            type: new GraphQLList(ArticleType),
+            args: {
+                first: { type: GraphQLInt }
+            },
+            resolve(parent, args) {
+                return Article.find({}).limit(args.first)
+            }
+        },
         article: {
             type: ArticleType,
             args: {
