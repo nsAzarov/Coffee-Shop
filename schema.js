@@ -70,6 +70,15 @@ const RootQuery = new GraphQLObjectType({
                 return Product.find({})
             }
         },
+        n_products: {
+            type: new GraphQLList(ProductType),
+            args: {
+                first: { type: GraphQLInt }
+            },
+            resolve(parent, args) {
+                return Product.find({}).limit(args.first)
+            }
+        },
         product: {
             type: ProductType,
             args: {
