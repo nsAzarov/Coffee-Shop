@@ -36,7 +36,10 @@ export default function MoreProducts() {
                             }} className='btn' text='EXPLORE MUG'/>
                         </div>
                     </ImageArea>
-                    <Title>
+                    <Title to={{
+                        pathname: `/Product/${prod.productID}`,
+                        state: prod
+                    }}>
                     {prod.name}
                     </Title>
                     <Price>

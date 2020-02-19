@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import gql from 'graphql-tag';
 import {useQuery} from '@apollo/react-hooks';
@@ -63,7 +64,10 @@ export default function LatestPosts() {
                         </div>
                     </ImageArea>
                     <Description style={{width: '280px'}}>
-                        <div className="title">{article.title}</div>
+                        <Link className="title" to={{
+                            pathname: `/Article/${article.articleID}`,
+                            state: article
+                        }}>{article.title}</Link>
                         <p>{article.description}</p>
                         <div className="date small-text-bold">{article.date}</div>
                     </Description>
@@ -81,7 +85,10 @@ export default function LatestPosts() {
                         </div>
                     </ImageArea>
                     <Description style={{width: '280px'}}>
-                        <div className="title">{article.title}</div>
+                        <Link className="title" to={{
+                            pathname: `/Article/${article.articleID}`,
+                            state: article
+                        }}>{article.title}</Link>
                         <p>{article.description}</p>
                         <div className="date small-text-bold">{article.date}</div>
                     </Description>

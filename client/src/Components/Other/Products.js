@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 const Price = styled.div`
@@ -25,7 +26,7 @@ const Price = styled.div`
     }
 `;
 
-const Title = styled.div`
+const Title = styled(Link)`
     color: #1d1f2e;
     font-size: 20px;
     line-height: 30px;
