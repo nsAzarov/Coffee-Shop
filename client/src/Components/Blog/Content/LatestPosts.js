@@ -86,6 +86,7 @@ export default function LatestPosts() {
                         <div className="date small-text-bold">{article.date}</div>
                     </Description>
                 </Post>}
+                else return null
             })}
         </Posts>
     )

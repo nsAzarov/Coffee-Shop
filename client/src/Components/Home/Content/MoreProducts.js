@@ -1,151 +1,53 @@
 import React from 'react';
+import gql from 'graphql-tag';
+import {useQuery} from '@apollo/react-hooks';
 
 import {Headline} from '../../Other/Headline';
 import ButtonWhite from '../../Other/ButtonWhite';
 import {MoreProductsWrap, ProductsCollection, ProductSmall, ImageArea, Title, Price} from '../../Other/Products';
 
+const GET_PRODUCTS_QUERY = gql`
+    query GetProducts {
+        products {
+            productID
+            img
+            name
+            oldPrice
+            newPrice
+        }
+    }
+`;
+
 export default function MoreProducts() {
+    const { loading, data } = useQuery(GET_PRODUCTS_QUERY);
     return (
         <MoreProductsWrap data-aos="fade-up">
             <Headline style={{color: 'black'}} className='small-text-bold' text='MORE PRODUCTS' />
             <ProductsCollection>
-                <ProductSmall data-aos="fade-up">
+            {loading ? null : data.products.map((prod, i) => {
+                    return <ProductSmall key={i} data-aos="fade-up">
                     <ImageArea>
-                        <img src={require(`../../../images/img1.jpg`)} alt=""/>
-                        <ButtonWhite className='sale' text='On Sale'/>
+                        <img src={require(`../../../images/${prod.img}`)} alt=""/>
+                        {prod.newPrice ? <ButtonWhite to='/' className='sale' text='On Sale'/> : null}
                         <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
+                            <ButtonWhite to={{
+                                pathname: `/Product/${prod.productID}`,
+                                state: prod
+                            }} className='btn' text='EXPLORE MUG'/>
                         </div>
                     </ImageArea>
                     <Title>
-                    Red Love Cup
+                    {prod.name}
                     </Title>
                     <Price>
-                        <div className="new-price">$25.00</div>
-                        <div className="old-price">$ 37.00 USD</div>
+                        {prod.newPrice ? <>
+                            <div className="new price">${prod.newPrice}.00</div>{prod.newPrice ? null : null}
+                            <div className="old price">$ {prod.oldPrice}.00 USD</div>
+                        </> :
+                        <div className="one price">$ {prod.oldPrice}.00 USD</div>}
                     </Price>
                 </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img2.jpg`)} alt=""/>
-                        <ButtonWhite className='sale' text='On Sale'/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price">$25.00</div>
-                        <div className="old-price">$ 37.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img3.jpg`)} alt=""/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price"></div>
-                        <div className="old-price">$ 19.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img4.jpg`)} alt=""/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price"></div>
-                        <div className="old-price">$ 19.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img5.jpg`)} alt=""/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price"></div>
-                        <div className="old-price">$ 19.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img6.jpg`)} alt=""/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price"></div>
-                        <div className="old-price">$ 19.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img7.jpg`)} alt=""/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price"></div>
-                        <div className="old-price">$ 19.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/mugPink.jpg`)} alt=""/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price"></div>
-                        <div className="old-price">$ 19.00 USD</div>
-                    </Price>
-                </ProductSmall>
-                <ProductSmall data-aos="fade-up">
-                    <ImageArea>
-                        <img src={require(`../../../images/img9.jpg`)} alt=""/>
-                        <div className="overlay">
-                            <ButtonWhite className='btn' text='EXPLORE MUG'/>
-                        </div>
-                    </ImageArea>
-                    <Title>
-                    Red Love Cup
-                    </Title>
-                    <Price>
-                        <div className="new-price"></div>
-                        <div className="old-price">$ 19.00 USD</div>
-                    </Price>
-                </ProductSmall>
+            })}
             </ProductsCollection>
         </MoreProductsWrap>
     )

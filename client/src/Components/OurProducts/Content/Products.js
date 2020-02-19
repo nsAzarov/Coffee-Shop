@@ -38,8 +38,11 @@ export default function Products() {
                         {prod.name}
                         </Title>
                         <Price>
-                            {prod.newPrice ? <div className="new-price">${prod.newPrice}.00</div> : null}
-                            <div className="old-price">$ {prod.oldPrice}.00 USD</div>
+                            {prod.newPrice ? <>
+                                <div className="new price">${prod.newPrice}.00</div>{prod.newPrice ? null : null}
+                                <div className="old price">$ {prod.oldPrice}.00 USD</div>
+                            </> :
+                            <div className="one price">$ {prod.oldPrice}.00 USD</div>}
                         </Price>
                     </ProductSmall>
                 })}

@@ -3,15 +3,23 @@ import styled from 'styled-components';
 const Price = styled.div`
     display: flex;
     align-items: center;
-    .new-price {
+    cursor: default;
+    .new {
         margin-right: 10px;
         color: #a25f4b;
         font-size: 20px;
         line-height: 32px;
     }
-    .old-price {
+    .old {
+        text-decoration: line-through;
         color: rgba(29, 31, 46, 0.7);
         font-size: 16px;
+        line-height: 28px;
+        font-weight: 400;
+    }
+    .one {
+        color: rgba(29, 31, 46, 0.7);
+        font-size: 18px;
         line-height: 28px;
         font-weight: 400;
     }
