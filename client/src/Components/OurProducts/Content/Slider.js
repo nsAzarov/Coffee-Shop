@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 import ButtonBlack from '../../Other/ButtonBlack';
@@ -36,6 +36,7 @@ const Slide = styled.div`
     width: 100%;
     height: 100%;
     white-space: normal;
+    transition: 1s;
 `;
 
 const SliderMask = styled.div`
@@ -56,43 +57,71 @@ const SliderArea = styled.div`
 `;
 
 export default function Slider() {
+    const slides = [
+        {
+            id: 1,
+            img: 'slide1.jpg',
+            title: 'NEW STORE OPENED',
+            header: `We're in London`,
+            description: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.'
+        },
+        {
+            id: 2,
+            img: 'art1.jpg',
+            title: 'NEW ARTICLE IS LIVE',
+            header: `Health Check: why do I get a headache when I haven’t had my coffee?`,
+            description: 'It is a paradisematic country, in which roasted parts of sentences fly into your mouth.'
+        }
+    ];
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [maxIndex, setMaxIndex] = useState(slides.length - 1); //arr length
+    useEffect(() => {
+        setMaxIndex(slides.length - 1);
+    }, [])
+    const prev = () => {
+        currentIndex === 0 ? 
+            setCurrentIndex(maxIndex)
+            :
+            setCurrentIndex(currentIndex - 1);
+    }
+    const next = () => {
+        currentIndex === maxIndex ? 
+            setCurrentIndex(0)
+            :
+            setCurrentIndex(currentIndex + 1);
+    }
+    useEffect(() => {
+        const interval = setInterval(() => {
+            next();
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [currentIndex])
     return (
         <SliderArea>
-            <ArrowButton style={{left: '-70px'}}>
+            <ArrowButton style={{left: '-70px'}} onClick={() => prev()}>
                 <img src={require(`../../../images/arrowLeft.png`)} alt="←"/>
             </ArrowButton>
-            <ArrowButton style={{right: '-70px'}}>
+            <ArrowButton style={{right: '-70px'}} onClick={() => next()}>
                 <img src={require(`../../../images/arrowRight.png`)} alt="→"/>
             </ArrowButton>
             <SliderMask>
-                <Slide>
-                    <ImageArea style={{width: '460px', padding: '0 10px'}}>
-                        <img src={require(`../../../images/slide1.jpg`)} style={{height: '380px', width: '460px'}}alt=""/>
-                        <div className="overlay" style={{width: '460px'}}>
-                            <ButtonWhite to='/Article/1' className='btn' text='READ THE FULL STORY'/>
-                        </div>
-                    </ImageArea>
-                    <DescriptionArea>
-                        <div className='small-text-bold opacity6'>NEW STORE OPENED</div>
-                        <div className='header'>We're in London</div>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.</p>
-                        <div><ButtonBlack to='/Article/1' text='READ THE FULL STORY'/></div>
-                    </DescriptionArea>
-                </Slide>
-                <Slide>
-                    <ImageArea style={{width: '460px', padding: '0 10px'}}>
-                        <img src={require(`../../../images/art1.jpg`)} style={{height: '380px', width: '460px'}}alt=""/>
-                        <div className="overlay" style={{width: '460px'}}>
-                            <ButtonWhite to='/Article/1' className='btn' text='READ THE FULL STORY'/>
-                        </div>
-                    </ImageArea>
-                    <DescriptionArea>
-                        <div className='small-text-bold opacity6'>NEW ARTICLE IS LIVE</div>
-                        <div className='header'>Health Check: why do I get a headache when I haven’t had my coffee?</div>
-                        <p>It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <div><ButtonBlack to='/Article/1' text='READ THE FULL STORY'/></div>
-                    </DescriptionArea>
-                </Slide>
+                {slides.map((slide) => {
+                    return <Slide key={slide.id} style={{'transform': `translateX(-${currentIndex*100}%)`}}>
+                        <ImageArea style={{width: '460px', padding: '0 10px'}}>
+                            <img src={require(`../../../images/${slide.img}`)} style={{height: '380px', width: '460px'}}alt=""/>
+                            <div className="overlay" style={{width: '460px'}}>
+                                <ButtonWhite to={`/Article/${slide.id}`} className='btn' text='READ THE FULL STORY'/>
+                            </div>
+                        </ImageArea>
+                        <DescriptionArea>
+                            <div className='small-text-bold opacity6'>{slide.title}</div>
+                            <div className='header'>{slide.header}</div>
+                            <p>{slide.description}</p>
+                            <div><ButtonBlack to={`/Article/${slide.id}`} text='READ THE FULL STORY'/></div>
+                        </DescriptionArea>
+                    </Slide>
+                })}
             </SliderMask>
         </SliderArea>
     )
