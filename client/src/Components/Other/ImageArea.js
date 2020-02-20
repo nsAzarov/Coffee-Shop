@@ -8,6 +8,7 @@ export const ImageArea = styled.div`
         width: 460px;
     }
     .sale {
+        cursor: default !important;
         position: absolute;
         z-index: 10;
         top: 10px;

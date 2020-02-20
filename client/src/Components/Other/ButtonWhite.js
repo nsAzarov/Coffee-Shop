@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 const Button = styled(Link)`
+    cursor: pointer !important;
     padding: 18px 24px;
     color: #1d1f2e;
     background-color: #fff;

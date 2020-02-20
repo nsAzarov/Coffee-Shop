@@ -61,9 +61,9 @@ export default function index() {
                 </GridElem>
                 <GridElem>
                     <Link to='/'>Home</Link>
-                    <Link to='/'>Our Products</Link>
-                    <Link to='/'>About</Link>
-                    <Link to='/'>Contact</Link>
+                    <Link to='/OurProducts'>Our Products</Link>
+                    <Link to='/About'>About</Link>
+                    <Link to='/Contacts'>Contact</Link>
                 </GridElem>
                 <GridElem>
                     <Link to='/'>Facebook</Link>

@@ -43,8 +43,9 @@ const ImageArea = styled.div`
     }
     position: relative;
     .sale {
+        cursor: default !important;
         position: absolute;
-        z-index: 10;
+        z-index: 1;
         top: 10px;
         right: 10px;
         font-size: 16px;
