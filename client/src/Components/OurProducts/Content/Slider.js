@@ -78,7 +78,7 @@ export default function Slider() {
     const [maxIndex, setMaxIndex] = useState(slides.length - 1); //arr length
     useEffect(() => {
         setMaxIndex(slides.length - 1);
-    }, [])
+    }, [slides.length])
     const prev = () => {
         currentIndex === 0 ? 
             setCurrentIndex(maxIndex)
@@ -93,10 +93,15 @@ export default function Slider() {
     }
     useEffect(() => {
         const interval = setInterval(() => {
-            next();
+            (function next() {
+                currentIndex === maxIndex ? 
+                    setCurrentIndex(0)
+                    :
+                    setCurrentIndex(currentIndex + 1);
+            })();
         }, 5000);
         return () => clearInterval(interval);
-    }, [currentIndex])
+    }, [currentIndex, maxIndex])
     return (
         <SliderArea>
             <ArrowButton style={{left: '-70px'}} onClick={() => prev()}>

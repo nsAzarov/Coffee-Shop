@@ -9,6 +9,7 @@ const {
 const Product = require('./models/Product');
 const Article = require('./models/Article');
 const Author = require('./models/Author');
+const Contact = require('./models/Contact');
 
 const ProductType = new GraphQLObjectType({
     name: 'Product',
@@ -37,6 +38,16 @@ const AuthorType = new GraphQLObjectType({
         img: { type: GraphQLString },
         name: { type: GraphQLString },
         presentation: { type: GraphQLString }
+    })
+});
+
+const ContactType = new GraphQLObjectType({
+    name: 'Contact',
+    fields: () => ({
+        _id: { type: GraphQLString },
+        name: { type: GraphQLString },
+        email: { type: GraphQLString },
+        message: { type: GraphQLString }
     })
 });
 
@@ -115,6 +126,29 @@ const RootQuery = new GraphQLObjectType({
     }
 });
 
+const Mutation = new GraphQLObjectType({
+    name: 'Mutation',
+    fields: {
+        addContact: {
+            type: ContactType,
+            args: {
+                name: { type: GraphQLString },
+                email: { type: GraphQLString },
+                message: { type: GraphQLString }
+            },
+            resolve(parent, args) {
+                const contact = new Contact({
+                    name: args.name,
+                    email: args.email,
+                    message: args.message
+                })
+                contact.save()
+            }
+        }
+    }
+})
+
 module.exports = new GraphQLSchema({
-    query: RootQuery
+    query: RootQuery,
+    mutation: Mutation
 });

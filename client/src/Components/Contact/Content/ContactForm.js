@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useRef} from 'react';
+import gql from 'graphql-tag';
 import styled from 'styled-components';
 
 import {Wrap} from '../../Other/ContentWrap';
 import {Headline} from '../../Other/Headline';
+import { useMutation } from '@apollo/react-hooks';
 
 const ButtonBlack = styled.button`
     cursor: pointer;
@@ -86,7 +88,21 @@ const FormWrap = styled.div`
     padding: 60px;
 `;
 
+const ADD_CONTACT = gql`
+    mutation addContact($name: String!, $email: String!, $message: String!) {
+        addContact(name: $name, email: $email, message: $message) {
+            name
+            email
+            message
+        }
+    }
+`;
+
 export default function ContactForm() {
+    const name = useRef('');
+    const email = useRef('');
+    const message = useRef('');
+    const [addContact] = useMutation(ADD_CONTACT);
     return (
         <Wrap style={{margin: '100px 0 50px 0'}}>
             <FormWrap data-aos="fade-up">
@@ -95,13 +111,13 @@ export default function ContactForm() {
                     <div className='contact-form-headline'>Drop us your message and I'll get back to you as soon as possible.</div>
                     <Form className='small-text-bold opacity6'>
                         <label htmlFor='name'>NAME</label>
-                        <input placeholder='James Coffee' name='name'></input>
+                        <input placeholder='James Coffee' name='name' ref={name}/>
                         <label htmlFor='email'>EMAIL ADDRESS</label>
-                        <input placeholder='customer@coffeestyle.io' name='email'></input>
+                        <input placeholder='customer@coffeestyle.io' name='email' ref={email}/>
                         <label htmlFor='message'>YOUR MESSAGE</label>
-                        <textarea placeholder='Hi! I would like to ask something about mugs.' name='message'></textarea>
+                        <textarea placeholder='Hi! I would like to ask something about mugs.' name='message' ref={message}/>
                     </Form>
-                    <ButtonBlack onClick={() => {alert('SEND MESSAGE')}}>SEND MESSAGE</ButtonBlack>
+                    <ButtonBlack onClick={() => {addContact({ variables: {name: name.current.value, email: email.current.value, message: message.current.value} }); alert('Отправлено')}}>SEND MESSAGE</ButtonBlack>
                 </LeftArea>
                 <RightArea>
                     <div className='small-text-bold opacity6'>ADDRESS</div>
